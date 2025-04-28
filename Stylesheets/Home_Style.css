@@ -204,6 +204,11 @@ main .food-slide-text {
     border-radius: 0.5rem;
 }
 
+.banner-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
 .banner-card .banner-card-icon {
     background-color: blue;
     margin-top: -2rem;
@@ -239,12 +244,14 @@ main .food-slide-text {
     width: 40%;
 }
 
-.about-us-textbox h4, h1 {
-    margin-bottom: 0.5rem;
+.about-us-textbox h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 .about-us-textbox h4 {
     color: var(--green);
+    margin-bottom: 0.5rem;
 }
 
 .about-us-textbox p {
@@ -284,6 +291,10 @@ main .food-slide-text {
 .menu-header h4 {
     color: var(--green);
     margin-bottom: 0.5rem;
+}
+
+.menu-header h1 {
+    font-size: 1.75rem;
 }
 
 .menu-body {
@@ -347,4 +358,106 @@ main .food-slide-text {
 
 .food-card-text h3 {
     margin-top: 1rem;
+}
+
+/* TESTIMONIALS */
+.hero-testimonials {
+    height: 90vh;
+    width: 100%;
+    padding: 1rem 10rem 3rem 10rem;
+}
+
+.testimonial-container {
+    display: flex;
+
+    gap: 1.5rem;
+    width: 100%;
+    height: 90%;
+}
+
+.testimonial-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    gap: 2.5rem;
+    height: 100%;
+    width: 30%;
+}
+
+.testimonial-text-container-header h4 {
+    color: var(--green);
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-text-container-header h1 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: gray;
+    color: var(--white);
+
+    width: 75%;
+    /* height: 25%; */
+    padding: 1rem;
+}
+
+.customer-testimonial-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+.customer-testimonial-header h4 {
+    margin-top: 0.5rem;
+}
+
+.customer-testimonial-header p {
+    font-size: 1rem;
+}
+
+.testimonial-box .customer-img {
+    height: 4rem;
+    width: 4rem;
+    background-color: blue;
+    border-radius: 100%;
+    margin-top: -3rem;
+}
+
+.testimonial-image-compilation {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.75rem;
+    height: 100%;
+    width: 70%;
+}
+
+.testimonial-image-compilation .img {
+    height: 10rem;
+    width: 10rem;
+    background-color: var(--gray);
+
+    transition: 0.5s;
+}
+
+.testimonial-image-compilation .img:hover {
+    height: 11.5rem;
+    width: 11rem;
+}
+
+.image-compilation-row-1, .image-compilation-row-2, .image-compilation-row-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
 }
