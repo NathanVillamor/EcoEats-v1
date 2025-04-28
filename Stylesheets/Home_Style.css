@@ -105,7 +105,10 @@ main .hero-text-container {
 
 main h1 {
     font-size: 5rem;
-    margin-bottom: 0.5rem;
+}
+
+main h2:last-of-type {
+    margin-bottom: 0.75rem;
 }
 
 main .hero-text-container button {
@@ -115,7 +118,7 @@ main .hero-text-container button {
 
 main .hero-food-img-container {
     position: relative;
-    right: 15rem;
+    right: 20rem;
     height: 100%;
 }
 
@@ -179,8 +182,169 @@ main .food-slide-text {
 }
 
 .hero-banner-container {
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
     width: 90%;
     height: 90%;
-    background-color: red;
     border-radius: 0 10rem 10rem 0;
+}
+
+.banner-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--white);
+    gap: 1rem;
+    padding: 0 1rem 1rem 1rem;
+    width: 20%;
+    border-radius: 0.5rem;
+}
+
+.banner-card .banner-card-icon {
+    background-color: blue;
+    margin-top: -2rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+}
+
+/* ABOUT US */
+.hero-about-us {
+    height: 90vh;
+    width: 100%;
+}
+
+.about-us-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem;
+    gap: 2.5rem;
+    height: 90%;
+    width: 100%;
+}
+
+.about-us-img {
+    height: 80%;
+    width: 40%;
+    background-color: rebeccapurple;
+}
+
+.about-us-textbox {
+    width: 40%;
+}
+
+.about-us-textbox h4, h1 {
+    margin-bottom: 0.5rem;
+}
+
+.about-us-textbox h4 {
+    color: var(--green);
+}
+
+.about-us-textbox p {
+    margin-bottom: 1rem;
+}
+.about-us-textbox ul li {
+    font-size: 0.75rem;
+    width: 90%;
+}
+
+.about-us-textbox ul {
+    margin-bottom: 1.5rem;
+}
+
+/* HERO MENU */
+.hero-menu {
+    height: 60vh;
+    width: 100%;
+}
+
+.menu-container {
+    background-color: var(--light-green);
+
+    height: 90%;
+    width: 100%;
+}
+
+.menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 3rem 10rem 2.5rem 10rem;
+    height: 15%;
+}
+
+.menu-header h4 {
+    color: var(--green);
+    margin-bottom: 0.5rem;
+}
+
+.menu-body {
+    display: flex;
+
+    padding: 1rem 10rem 3rem 10rem;
+    width: 100%;
+    height: 85%;
+}
+
+.menu-category-container {
+    overflow: hidden;
+    overflow-y: auto;
+
+    width: 20%;
+    height: 100%;
+}
+
+.calorie-filter-container {
+    margin-bottom: 1rem;
+}
+
+.calorie-filter-container input {
+    width: 95%;
+}
+
+.category-container button {
+    width: 95%;
+    border-radius: 10rem;
+    margin-bottom: 1rem;
+}
+
+.menu-food-card-container {
+    display: flex;
+    overflow: hidden;
+    overflow-x: auto;
+
+    padding: 0 1rem 0 1rem;
+    gap: 1.25rem;
+    min-width: 80%;
+    height: 100%;
+}
+
+.food-card {
+    background-color: var(--white);
+    width: 27.5%;
+    height: 100%;
+    border-radius: 0.5rem;
+}
+
+.food-card-img {
+    height: 60%;
+    width: 100%;
+    background-color: red;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.food-card-text {
+    padding: 1rem;
+}
+
+.food-card-text h3 {
+    margin-top: 1rem;
 }
