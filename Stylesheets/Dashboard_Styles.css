@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    overflow-y: hidden;
 }
 
 :root {
@@ -19,26 +18,103 @@
 }
 
 body {
+    background-color: var(--white);
     font-family: "Open Sans", sans-serif;
+
+    width: 100%;
+    height: 100vh;
 }
 
-nav { 
+p {
+    font-size: 0.75rem;
+}
+
+button {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+/* SPECIFIC CSS */
+.dashboard-header {
+    width: 100%;
+    height: 40vh;
+    padding: 1rem 9rem 1rem 9rem;
+}
+
+nav {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 1rem;
+    justify-content: space-between;
+
+    height: 5.5rem;
+    margin-bottom: 1.25rem;
 }
 
-.sidebar {
-    height: 93vh;
+nav img {
+    height: auto;
+    width: 4.5rem;
+}
+
+nav input {
+    height: 2.5rem;
+    width: 22.5rem;
+    border-radius: 0.5rem;
+}
+
+.nav-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+nav .button-group {
+    display: flex;
+    gap: 0.75rem;
+}
+
+nav .dashboard-profile {
+    background-color: var(--gray);
+    text-align: center;
+
+    border-radius: 100%;
     width: 2.5rem;
+    height: 2.5rem;
+}
+
+nav .dashboard-cart {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.header-category {
     display: flex;
     flex-direction: column;
+    gap: 1.75rem;
+
+    width: 100%;
+
+}
+
+.header-category input {
+    background-color: #f7f7f7;
+    border-color: transparent;
+
+    height: 2.5rem;
+    width: 100%;
+    border-radius: 20px;
+    padding-left: 3.75rem;
+}
+
+.category-container {
+    display: flex;
     align-items: center;
-    background-color: grey;
+    
+    gap: 2.5rem;
 }
 
-.sidebar li {
-    margin: 2rem 0 2rem 0;
+.food-category-card {
+    background-color: var(--grey);
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100%;
 }
-
