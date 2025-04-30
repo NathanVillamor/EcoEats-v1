@@ -145,7 +145,7 @@ nav .dashboard-cart {
 
 /* CART */
 .cart {
-    display: flex;
+    display: flex; /* FLEX */
     flex-direction: column;
     justify-content: space-between;
     position: fixed;
@@ -153,9 +153,11 @@ nav .dashboard-cart {
     padding: 1.5rem;
     height: 100%;
     width: 35rem;
-    right: 0;
+    right: -35rem;
     z-index: 5;
     background-color: rebeccapurple;
+
+    transition: 0.5s;
 }
 
 /* CART HEADER */
@@ -180,7 +182,7 @@ nav .dashboard-cart {
 .basket-item {
     background-color: blue;
     
-    border-bottom: 1px solid rgb(240, 239, 239);;
+    border-bottom: 1px solid rgb(240, 239, 239);
     height: 20%;
     width: 99.5%;
     margin-bottom: 0.5rem;
