@@ -12,7 +12,7 @@
 </head>
 <body>
     
-    <nav>
+    <nav id="homeNav">
         
         <img src="/Assets/EcoEats-Logo-Transparent.png" alt="" srcset="">
 
@@ -24,8 +24,8 @@
         </ul>
 
         <div class="nav-button-group">
-            <button class="nav-signup"> Signup </button>
-            <button class="nav-login"> Login </button>
+            <button class="nav-signup" id="navSignup"> Signup </button>
+            <button class="nav-login" id="navLogin"> Login </button>
         </div>
 
     </nav>
@@ -34,29 +34,29 @@
 
 
         <div class="hero-text-container">
-            <h2> Features </h2>
-            <h1> Food </h1>
+            <h3> Features </h3>
+            <h1 id="foodDisplayText"> Chicken Cacciatore </h1>
             <h2> Eat Fresh </h2>
             <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem vero atque, non accusamus error quasi numquam consectetur maxime delectus ea?</p>
             <button class="order-now"> Order now </button>
         </div>
 
         <div class="hero-food-img-container">
-            <div class="food-image"></div>
+            <div class="food-image" id="heroFoodDisplay"></div>
         </div>
 
         <div class="hero-food-selector-container">
             
-            <div class="food-slide-1">
-                <div class="food-slide-image-1"></div>
+            <div class="food-slide-1" id="foodSlide1">
+                <div class="food-slide-image-1" id="foodImageSlide1"></div>
                 <div class="food-slide-text">
                     <h2> Food title </h2>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quisquam cum explicabo harum quas asperiores assumenda ipsa. Atque voluptas, quod laboriosam magnam omnis consectetur vel.</p>
                 </div>
         
             </div>
-            <div class="food-slide-2">
-                <div class="food-slide-image-2"></div>
+            <div class="food-slide-2" id="foodSlide2">
+                <div class="food-slide-image-2" id="foodImageSlide2"></div>
                 
                 <div class="food-slide-text">
                     <h2> Food title </h2>
@@ -65,8 +65,8 @@
         
         
             </div>
-            <div class="food-slide-3">
-                <div class="food-slide-image-3"></div>
+            <div class="food-slide-3" id="foodSlide3">
+                <div class="food-slide-image-3" id="foodImageSlide3"></div>
                 <div class="food-slide-text">
                     <h2> Food title </h2>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quisquam cum explicabo harum quas asperiores assumenda ipsa. Atque voluptas, quod laboriosam magnam omnis consectetur vel.</p>
@@ -83,21 +83,21 @@
         <div class="hero-banner-container">
 
             <div class="banner-card">
-                <div class="banner-card-icon"></div>
+                <div class="banner-card-icon-1"></div>
                 <div class="banner-textbox">
                     <h3> Card Title </h3>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, numquam? Accusamus perferendis cum ad nesciunt? Ullam maiores doloribus soluta voluptate!</p>
                 </div>
             </div>
             <div class="banner-card">
-                <div class="banner-card-icon"></div>
+                <div class="banner-card-icon-2"></div>
                 <div class="banner-textbox">
                     <h3> Card Title </h3>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, numquam? Accusamus perferendis cum ad nesciunt? Ullam maiores doloribus soluta voluptate!</p>
                 </div>
             </div>
             <div class="banner-card">
-                <div class="banner-card-icon"></div>
+                <div class="banner-card-icon-3"></div>
                 <div class="banner-textbox">
                     <h3> Card Title </h3>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, numquam? Accusamus perferendis cum ad nesciunt? Ullam maiores doloribus soluta voluptate!</p>
@@ -151,15 +151,16 @@
                 <div class="menu-category-container">
                     <div class="calorie-filter-container">
                         <h4> Calories</h4>
-                        <input type="range" name="" id="">
+                        <p> ### kCal</p>
+                        <input type="range" name="" id="calorieSlider" min="">
                     </div>
 
                     <div class="category-container">
-                        <button> Burger </button>
-                        <button> Burger </button>
-                        <button> Burger </button>
-                        <button> Burger </button>
-                        <button> Burger </button>
+                        <button class="category-button"> Burger </button>
+                        <button class="category-button"> Burger </button>
+                        <button class="category-button"> Burger </button>
+                        <button class="category-button"> Burger </button>
+                        <button class="category-button"> Burger </button>
                     </div>
 
                 </div>
@@ -178,52 +179,7 @@
                                 <small> ( <span> 123 </span> ) </small>
                             </div>
                             
-                            <h3> P000.00</h3>
-                        </div>
-                    </div>
-                    <div class="food-card">
-                        <div class="food-card-img"></div>
-                        <div class="food-card-text">
-                            <h4> Food title </h4>
 
-                            <div class="rating-container">
-                                <div class="stars-container">
-                                    
-                                </div>
-                                <small> ( <span> 123 </span> ) </small>
-                            </div>
-
-                            <h3> P000.00</h3>
-                        </div>
-                    </div>
-                    <div class="food-card">
-                        <div class="food-card-img"></div>
-                        <div class="food-card-text">
-                            <h4> Food title </h4>
-
-                            <div class="rating-container">
-                                <div class="stars-container">
-                                    
-                                </div>
-                                <small> ( <span> 123 </span> ) </small>
-                            </div>
-
-                            <h3> P000.00</h3>
-                        </div>
-                    </div>
-                    <div class="food-card">
-                        <div class="food-card-img"></div>
-                        <div class="food-card-text">
-                            <h4> Food title </h4>
-
-                            <div class="rating-container">
-                                <div class="stars-container">
-                                    
-                                </div>
-                                <small> ( <span> 123 </span> ) </small>
-                            </div>
-
-                            <h3> P000.00</h3>
                         </div>
                     </div>
 

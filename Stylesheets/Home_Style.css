@@ -9,16 +9,19 @@
 :root {
     --green: #b6cf29;
     --light-green: #daffd3;
-    --black: #050505;
+    --black: #333333;
     --gray: gray;
-    --grey: #b4c0b4;
-    --white: #f4fbeb;
+    --grey: #f7f7f7;
+    --white: #FEFEFE;
 
-    --shadow: -5px 4px 11px -2px rgba(0,0,0,0.47);
+    --shadow: -3px 3px 22px -8px rgba(0,0,0,0.69);
 }
 
 body {
     background-image: url(/Assets/Marble-Background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: "Open Sans", sans-serif;
 }
 
@@ -29,7 +32,12 @@ p {
 button {
     padding: 0.5rem 1rem 0.5rem 1rem;
     border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    text-shadow: 0.75px 1px var(--black);
+    cursor: pointer;
+    transition: 0.5s;
 }
+
 /* SPECIFIC CSS */
 nav {
     position: fixed;
@@ -37,17 +45,20 @@ nav {
     align-items: center;
     justify-content: space-around;
     
-    padding: 1.5rem 1.5rem 0.5rem 1rem;
+    padding: 1.5rem 1.5rem 1rem 1rem;
     margin-bottom: 1rem;
     height: 5rem;
     width: 100%;
-    z-index: 3;
+    z-index: 5;
+
+    transition: 0.5s;
 }
 
 nav img {
     width: auto;
     cursor: pointer;
 
+    border-radius: 100%;
     height: 4.5rem;
 }
 
@@ -58,6 +69,9 @@ nav ul {
 
 nav ul li {
     list-style-type: none;
+    color: var(--white);
+    text-shadow: 0.75px 1px var(--black);
+    font-weight: bold;
 
     transition: 0.5s;
 }
@@ -74,8 +88,16 @@ nav .nav-button-group {
 
 nav .nav-login, .nav-signup {
     background-color: var(--green);
-    border-color: transparent;
+    border-color: 1px solid var(--green);
     color: var(--white);
+
+    transition: 0.5s;
+}
+
+nav .nav-button-scroll {
+    background-color: var(--white);
+    border-color: 1px solid var(--green);
+    color: var(--green);
 
     transition: 0.5s;
 }
@@ -106,10 +128,29 @@ main .hero-text-container {
     margin-left: 8rem;
     width: 20%;
     z-index: 3;
+
+    color: var(--white);
+    text-shadow: 1px 2.5px var(--black);
+}
+
+.hero-text-container button {
+    background-color: var(--green);
+    color: var(--white);
+    border: 1px solid var(--green);
+    box-shadow: var(--shadow);
+
+    height: 2.5rem;
+    width: 7.5rem;
+}
+
+.hero-text-container h3 {
+    color: var(--green);
 }
 
 main h1 {
-    font-size: 5rem;
+    font-size: 4rem;
+    line-height: 4.5rem;
+    transition: 0.5s;
 }
 
 main h2:last-of-type {
@@ -121,6 +162,13 @@ main .hero-text-container button {
     width: 6.5rem;
 }
 
+main .hero-text-container button:hover {
+    background-color: var(--white);
+    border: 1px solid var(--green);
+    color: var(--green);
+    width: 7rem;
+}
+
 main .hero-food-img-container {
     position: relative;
     right: 20rem;
@@ -128,14 +176,18 @@ main .hero-food-img-container {
     height: 100%;
 }
 
-main .food-image {
-    background-color: var(--light-green);
+#heroFoodDisplay {
+    background-image: url(/Assets/FoodImages/DISHES/CHICKEN\ CACCIATORE.avif);
+    background-size: contain;
     position: absolute;
 
     z-index: 2;
     border-radius: 100%;
     height: 38rem;
     width: 38rem;
+    box-shadow: var(--shadow);
+
+    transition: 0.5s;
 }
 
 main .hero-food-selector-container {
@@ -146,16 +198,18 @@ main .hero-food-selector-container {
     width: 35%;
 }
 
-main .food-slide-1, .food-slide-2, .food-slide-3 {
+.food-slide-1, .food-slide-2, .food-slide-3 {
     display: flex;
     align-items: center;
     background-color: var(--green);
     color: var(--white);
     gap: 1rem;
-    padding: 1rem 1rem 1rem 2rem;
+    padding: 0.75rem 0.75rem 0.75rem 2rem;
     border-radius: 10rem 0 0 10rem;
     height: 8rem;
     width: 90%;
+    z-index: 4;
+    box-shadow: var(--shadow);
 
     transition: 0.5s;
 }
@@ -170,6 +224,26 @@ main .food-slide-1:hover, .food-slide-2:hover, .food-slide-3:hover {
     width: 100%;
 }
 
+.active-slide {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 10rem 0 0 10rem;
+    z-index: 4;
+
+    transition: 0.5s;
+
+
+    color: var(--green);
+    border-color: var(--green);
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    
+    padding: 2rem 2rem 2rem 1.5rem;
+    height: 8.5rem;
+    width: 100%;
+}
+
 main .food-slide-image-1, .food-slide-image-2, .food-slide-image-3 {
     height: 6rem;
     width: 6rem;
@@ -177,26 +251,49 @@ main .food-slide-image-1, .food-slide-image-2, .food-slide-image-3 {
     background-color: var(--white);
 }
 
+.food-slide-image-1 {
+    background-image: url(/Assets/FoodImages/DISHES/CHICKEN\ CACCIATORE.avif);
+    background-size: contain;
+    box-shadow: var(--shadow);
+}
+.food-slide-image-2 {
+    background-image: url(/Assets/FoodImages/DISHES/CHICKEN\ CARB\ PASTA.avif);
+    background-size: contain;
+    box-shadow: var(--shadow);
+}
+.food-slide-image-3 {
+    background-image: url(/Assets/FoodImages/DISHES/CHICKEN\ PARM\ PASTA.avif);
+    background-size: contain;
+    box-shadow: var(--shadow);
+}
+
 main .food-slide-text {
     width: 80%;
+    height: 90%;
+    line-height: 0.95rem;
 }
 
 /* HERO BANNER */
 .hero-banner {
-    
-
+    z-index: 3;
     width: 100%;
-    height: 40vh;
+    height: 45vh;
+    margin-top: 5rem;
 }
 
 .hero-banner-container {
-    background-color: red;
+    background: linear-gradient( rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20) ), url('/Assets/banana-leaf-lines-fibers-pattern.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: var(--shadow);
+
     gap: 3rem;
     width: 90%;
-    height: 90%;
+    height: 100%;
     border-radius: 0 10rem 10rem 0;
 }
 
@@ -206,10 +303,12 @@ main .food-slide-text {
     align-items: center;
     text-align: center;
     background-color: var(--white);
-    gap: 1rem;
+
+    gap: 0.5rem;
     padding: 0 1rem 1rem 1rem;
     width: 20%;
     border-radius: 0.5rem;
+    box-shadow: var(--shadow);
 }
 
 .banner-card h3 {
@@ -217,17 +316,32 @@ main .food-slide-text {
     margin-bottom: 0.5rem   ;
 }
 
-.banner-card .banner-card-icon {
-    background-color: blue;
+.banner-card .banner-card-icon-1, .banner-card-icon-2, .banner-card-icon-3 {
+    background-color: var(--light-green);
+    /* border: 1px solid var(--black); */
+    box-shadow: var(--shadow);
     margin-top: -2rem;
     width: 4rem;
     height: 4rem;
     border-radius: 100%;
+    background-size: 3rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner-card-icon-1 {
+    background-image: url(/Assets/fast-delivery.png);
+}
+.banner-card-icon-2 {
+    background-image: url(/Assets/restaurant.png);
+}
+.banner-card-icon-3 {
+    background-image: url(/Assets/salad.png);
 }
 
 /* ABOUT US */
 .hero-about-us {
-    height: 90vh;
+    height: 85vh;
     width: 100%;
 }
 
@@ -259,7 +373,7 @@ main .food-slide-text {
 
 .about-us-textbox h4 {
     color: var(--green);
-    margin-bottom: 0.5rem;
+    
 }
 
 .about-us-textbox p {
@@ -267,6 +381,7 @@ main .food-slide-text {
 }
 .about-us-textbox ul li {
     font-size: 0.75rem;
+    
     width: 90%;
 }
 
@@ -274,15 +389,31 @@ main .food-slide-text {
     margin-bottom: 1.5rem;
 }
 
+.about-us-textbox button {
+    height: 2.5rem;
+    width: 6.5rem;
+    background-color: var(--green);
+    color: var(--white);
+    border: 1px solid var(--green);
+}
+
+.about-us-textbox button:hover {
+    background-color: var(--white);
+    border: 1px solid var(--green);
+    color: var(--green);
+    width: 7rem;
+}
+
 /* HERO MENU */
 .hero-menu {
-    height: 60vh;
+    height: 70vh;
     width: 100%;
 }
 
 .menu-container {
     background-color: var(--light-green);
 
+    padding: 1rem 1.5rem;
     height: 90%;
     width: 100%;
 }
@@ -293,12 +424,54 @@ main .food-slide-text {
     justify-content: space-between;
 
     padding: 3rem 10rem 2.5rem 10rem;
-    height: 15%;
+    height: 12.5%;
+}
+
+.menu-button-group button {
+    border: none;
+    background-color: var(--light-green);
+    box-shadow: none;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 100%;
+}
+
+.menu-button-group button:hover {
+    background-color: var(--green);
 }
 
 .menu-header h4 {
     color: var(--green);
-    margin-bottom: 0.5rem;
+}
+
+#calorieSlider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: 1px solid var(--green);
+    cursor: pointer;
+    -webkit-transition: .2s; 
+    transition: .2s;
+}
+
+#calorieSlider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+
+#calorieSlider::-webkit-slider-runnable-track {
+    height: 0.25rem;
+    background: var(--grey); /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+#calorieSlider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -3px; /* Centers thumb on the track */
+    background-color: var(--green);
+    border: 1px solid var(--black);
+    height: 0.75rem;
+    width: 0.75rem;  
+    border-radius: 100%;
 }
 
 .menu-header h1 {
@@ -310,43 +483,79 @@ main .food-slide-text {
 
     padding: 1rem 10rem 3rem 10rem;
     width: 100%;
-    height: 85%;
+    height: 80%;
 }
 
 .menu-category-container {
     overflow: hidden;
     overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gray) var(--light-green);
 
     width: 20%;
     height: 100%;
+}
+
+.menu-category-container::-webkit-scrollbar-track {
+    background-color: var(--green);
+}
+
+.menu-category-container::-webkit-scrollbar-thumb {
+    background-color: var(--green);
 }
 
 .calorie-filter-container {
     margin-bottom: 1rem;
 }
 
+.calorie-filter-container h4 {
+    margin-bottom: 0.25rem;
+}
+
 .calorie-filter-container input {
     width: 95%;
 }
 
-.category-container button {
+.category-button {
+    box-shadow: none;
+    background-color: var(--green);
+    border: 1px solid var(--green);
+
     width: 95%;
     border-radius: 10rem;
     margin-bottom: 1rem;
+    transition: 0.5s;
+}
+
+.category-button:hover {
+    background-color: var(--white);
+    border: 1px solid var(--green);
+    color: var(--green);
+    padding: 0.75rem;
+}
+
+.category-button-active {
+    background-color: var(--white);
+    border: 1px solid var(--green);
+    color: var(--green);
+    padding: 0.75rem;
+    width: 95%;
+    border-radius: 10rem;
+    margin-bottom: 1rem;
+    transition: 0.5s;
 }
 
 .menu-food-card-container {
     display: flex;
     overflow: hidden;
-    overflow-x: auto;
 
     padding: 0 1rem 0 1rem;
-    gap: 1.25rem;
-    min-width: 80%;
+    gap: 1rem;
+    width: 80%;
     height: 100%;
 }
 
-.food-card {
+.food-card {    
     background-color: var(--white);
     width: 27.5%;
     height: 100%;
@@ -362,6 +571,7 @@ main .food-slide-text {
 
 .food-card-text {
     padding: 1rem;
+    height: 40%;
 }
 
 .food-card-text h3 {
