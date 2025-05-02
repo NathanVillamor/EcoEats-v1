@@ -606,6 +606,9 @@ main .food-slide-text {
     transition: 0.5s;
 }
 
+.menu-sandwich, .menu-chicken, .menu-burger, .menu-pork, .menu-dessert, .menu-juice {
+    display: none;
+}
 
 /* TESTIMONIALS */
 .hero-testimonials {

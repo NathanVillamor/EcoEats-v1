@@ -52,6 +52,14 @@ document.getElementById("calorieSlider").onchange = function () {
 }
 
 document.getElementById("categoryButton1").onclick = function () {
+    document.querySelector(".menu-pasta").style.display = "flex";
+    document.querySelector(".menu-burger").style.display = "none";
+    document.querySelector(".menu-sandwich").style.display = "none";
+    document.querySelector(".menu-chicken").style.display = "none";
+    document.querySelector(".menu-pork").style.display = "none";
+    document.querySelector(".menu-dessert").style.display = "none";
+    document.querySelector(".menu-juice").style.display = "none";
+
     document.getElementById("categoryButton1").setAttribute("class", "category-button-active");
     document.getElementById("categoryButton2").setAttribute("class", "category-button");
     document.getElementById("categoryButton3").setAttribute("class", "category-button");
@@ -61,6 +69,14 @@ document.getElementById("categoryButton1").onclick = function () {
     document.getElementById("categoryButton7").setAttribute("class", "category-button");
 }
 document.getElementById("categoryButton2").onclick = function () {
+    document.querySelector(".menu-pasta").style.display = "none";
+    document.querySelector(".menu-burger").style.display = "flex";
+    document.querySelector(".menu-sandwich").style.display = "none";
+    document.querySelector(".menu-chicken").style.display = "none";
+    document.querySelector(".menu-pork").style.display = "none";
+    document.querySelector(".menu-dessert").style.display = "none";
+    document.querySelector(".menu-juice").style.display = "none";
+
     document.getElementById("categoryButton1").setAttribute("class", "category-button");
     document.getElementById("categoryButton2").setAttribute("class", "category-button-active");
     document.getElementById("categoryButton3").setAttribute("class", "category-button");
@@ -70,6 +86,14 @@ document.getElementById("categoryButton2").onclick = function () {
     document.getElementById("categoryButton7").setAttribute("class", "category-button");
 }
 document.getElementById("categoryButton3").onclick = function () {
+    document.querySelector(".menu-pasta").style.display = "none";
+    document.querySelector(".menu-burger").style.display = "none";
+    document.querySelector(".menu-sandwich").style.display = "flex";
+    document.querySelector(".menu-chicken").style.display = "none";
+    document.querySelector(".menu-pork").style.display = "none";
+    document.querySelector(".menu-dessert").style.display = "none";
+    document.querySelector(".menu-juice").style.display = "none";
+    
     document.getElementById("categoryButton1").setAttribute("class", "category-button");
     document.getElementById("categoryButton2").setAttribute("class", "category-button");
     document.getElementById("categoryButton3").setAttribute("class", "category-button-active");
@@ -79,6 +103,14 @@ document.getElementById("categoryButton3").onclick = function () {
     document.getElementById("categoryButton7").setAttribute("class", "category-button");
 }
 document.getElementById("categoryButton4").onclick = function () {
+    document.querySelector(".menu-pasta").style.display = "none";
+    document.querySelector(".menu-burger").style.display = "none";
+    document.querySelector(".menu-sandwich").style.display = "none";
+    document.querySelector(".menu-chicken").style.display = "flex";
+    document.querySelector(".menu-pork").style.display = "none";
+    document.querySelector(".menu-dessert").style.display = "none";
+    document.querySelector(".menu-juice").style.display = "none";
+    
     document.getElementById("categoryButton1").setAttribute("class", "category-button");
     document.getElementById("categoryButton2").setAttribute("class", "category-button");
     document.getElementById("categoryButton3").setAttribute("class", "category-button");
@@ -88,6 +120,14 @@ document.getElementById("categoryButton4").onclick = function () {
     document.getElementById("categoryButton7").setAttribute("class", "category-button");
 }
 document.getElementById("categoryButton5").onclick = function () {
+    document.querySelector(".menu-pasta").style.display = "none";
+    document.querySelector(".menu-burger").style.display = "none";
+    document.querySelector(".menu-sandwich").style.display = "none";
+    document.querySelector(".menu-chicken").style.display = "none";
+    document.querySelector(".menu-pork").style.display = "flex";
+    document.querySelector(".menu-dessert").style.display = "none";
+    document.querySelector(".menu-juice").style.display = "none";
+    
     document.getElementById("categoryButton1").setAttribute("class", "category-button");
     document.getElementById("categoryButton2").setAttribute("class", "category-button");
     document.getElementById("categoryButton3").setAttribute("class", "category-button");
@@ -97,6 +137,14 @@ document.getElementById("categoryButton5").onclick = function () {
     document.getElementById("categoryButton7").setAttribute("class", "category-button");
 }
 document.getElementById("categoryButton6").onclick = function () {
+    document.querySelector(".menu-pasta").style.display = "none";
+    document.querySelector(".menu-burger").style.display = "none";
+    document.querySelector(".menu-sandwich").style.display = "none";
+    document.querySelector(".menu-chicken").style.display = "none";
+    document.querySelector(".menu-pork").style.display = "none";
+    document.querySelector(".menu-dessert").style.display = "flex";
+    document.querySelector(".menu-juice").style.display = "none";
+    
     document.getElementById("categoryButton1").setAttribute("class", "category-button");
     document.getElementById("categoryButton2").setAttribute("class", "category-button");
     document.getElementById("categoryButton3").setAttribute("class", "category-button");
@@ -106,6 +154,14 @@ document.getElementById("categoryButton6").onclick = function () {
     document.getElementById("categoryButton7").setAttribute("class", "category-button");
 }
 document.getElementById("categoryButton7").onclick = function () {
+    document.querySelector(".menu-pasta").style.display = "none";
+    document.querySelector(".menu-burger").style.display = "none";
+    document.querySelector(".menu-sandwich").style.display = "none";
+    document.querySelector(".menu-chicken").style.display = "none";
+    document.querySelector(".menu-pork").style.display = "none";
+    document.querySelector(".menu-dessert").style.display = "none";
+    document.querySelector(".menu-juice").style.display = "flex";
+    
     document.getElementById("categoryButton1").setAttribute("class", "category-button");
     document.getElementById("categoryButton2").setAttribute("class", "category-button");
     document.getElementById("categoryButton3").setAttribute("class", "category-button");
@@ -120,27 +176,29 @@ let nextVal = -3;
 let totalSlide = 0;
 
 document.getElementById("prev").onclick = function () {
-    nextVal = nextVal + -6;
+    nextVal = nextVal + -15;
     document.getElementById("foodCardContainer").style.right = (nextVal + "rem");
     totalSlide++;
+    document.getElementById("next").disabled = false;
 
-    // if(totalSlide == 2) {
-    //     document.getElementById("prev").disabled = true;
-    // }
-    // else {
-    //     document.getElementById("prev").disabled = false;
-    // }
+    if(totalSlide == 10) {
+        document.getElementById("prev").disabled = true;
+    }
+    else {
+        document.getElementById("prev").disabled = false;
+    }
 }
 document.getElementById("next").onclick = function () {
-    nextVal = nextVal + 6;
+    nextVal = nextVal + 15;
     document.getElementById("foodCardContainer").style.right = (nextVal + "rem");
     totalSlide--;
+    document.getElementById("prev").disabled = false;
     
-    // if(totalSlide == -2) {
-    //     document.getElementById("next").disabled = true;
-    // }
-    // else {
-    //     document.getElementById("next").disabled = false;
-    // }
+    if(totalSlide == -1) {
+        document.getElementById("next").disabled = true;
+    }
+    else {
+        document.getElementById("next").disabled = false;
+    }
 }
 
