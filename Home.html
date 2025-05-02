@@ -47,10 +47,10 @@
 
         <div class="hero-food-selector-container">
             
-            <div class="food-slide-1" id="foodSlide1">
+            <div class="active-slide" id="foodSlide1">
                 <div class="food-slide-image-1" id="foodImageSlide1"></div>
                 <div class="food-slide-text">
-                    <h2> Food title </h2>
+                    <h2> Chicken Cacciatore </h2>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quisquam cum explicabo harum quas asperiores assumenda ipsa. Atque voluptas, quod laboriosam magnam omnis consectetur vel.</p>
                 </div>
         
@@ -59,7 +59,7 @@
                 <div class="food-slide-image-2" id="foodImageSlide2"></div>
                 
                 <div class="food-slide-text">
-                    <h2> Food title </h2>
+                    <h2> Chicken Carbonara </h2>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quisquam cum explicabo harum quas asperiores assumenda ipsa. Atque voluptas, quod laboriosam magnam omnis consectetur vel.</p>
                 </div>
         
@@ -68,7 +68,7 @@
             <div class="food-slide-3" id="foodSlide3">
                 <div class="food-slide-image-3" id="foodImageSlide3"></div>
                 <div class="food-slide-text">
-                    <h2> Food title </h2>
+                    <h2> Chicken Parmesan </h2>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quisquam cum explicabo harum quas asperiores assumenda ipsa. Atque voluptas, quod laboriosam magnam omnis consectetur vel.</p>
                 </div>
         
@@ -141,8 +141,8 @@
                 </div>
 
                 <div class="menu-button-group">
-                    <button class="prev"> - </button>
-                    <button class="next"> + </button>
+                    <button class="prev" id="prev"> - </button>
+                    <button class="next" id="next"> + </button>
                 </div>
             </div>
 
@@ -151,28 +151,43 @@
                 <div class="menu-category-container">
                     <div class="calorie-filter-container">
                         <h4> Calories</h4>
-                        <p> <span id="calorieNumber"></span> kCal</p>
+                        <p> <span id="calorieNumber"> 800 </span> kCal</p>
                         <input type="range" name="" id="calorieSlider" min="100" max="1500">
                     </div>
 
                     <div class="category-container">
-                        <button class="category-button" id="categoryButton1"> Burger </button>
+                        <button class="category-button" id="categoryButton1"> Pasta </button>
                         <button class="category-button" id="categoryButton2"> Burger </button>
-                        <button class="category-button" id="categoryButton3"> Burger </button>
-                        <button class="category-button" id="categoryButton4"> Burger </button>
-                        <button class="category-button" id="categoryButton5"> Burger </button>
+                        <button class="category-button" id="categoryButton3"> Sandwich </button>
+                        <button class="category-button" id="categoryButton4"> Chicken </button>
+                        <button class="category-button" id="categoryButton5"> Pork </button>
+                        <button class="category-button" id="categoryButton6"> Dessert </button>
+                        <button class="category-button" id="categoryButton7"> Juice </button>
                     </div>
 
                 </div>
 
-                <div class="menu-food-card-container">
+                <div class="parent-menu-food-cart-container">
 
-                    <div class="food-card">
+                    <div class="menu-food-card-container" id="foodCardContainer">
+    
+                        <div class="food-card">
+                                
                             
-                        
-
+    
+                        </div>
+                        <div class="food-card">
+                                
+                            
+    
+                        </div>
+                        <div class="food-card">
+                                
+                            
+    
+                        </div>
+    
                     </div>
-
                 </div>
 
             </div>

@@ -57,6 +57,8 @@ document.getElementById("categoryButton1").onclick = function () {
     document.getElementById("categoryButton3").setAttribute("class", "category-button");
     document.getElementById("categoryButton4").setAttribute("class", "category-button");
     document.getElementById("categoryButton5").setAttribute("class", "category-button");
+    document.getElementById("categoryButton6").setAttribute("class", "category-button");
+    document.getElementById("categoryButton7").setAttribute("class", "category-button");
 }
 document.getElementById("categoryButton2").onclick = function () {
     document.getElementById("categoryButton1").setAttribute("class", "category-button");
@@ -64,6 +66,8 @@ document.getElementById("categoryButton2").onclick = function () {
     document.getElementById("categoryButton3").setAttribute("class", "category-button");
     document.getElementById("categoryButton4").setAttribute("class", "category-button");
     document.getElementById("categoryButton5").setAttribute("class", "category-button");
+    document.getElementById("categoryButton6").setAttribute("class", "category-button");
+    document.getElementById("categoryButton7").setAttribute("class", "category-button");
 }
 document.getElementById("categoryButton3").onclick = function () {
     document.getElementById("categoryButton1").setAttribute("class", "category-button");
@@ -71,6 +75,8 @@ document.getElementById("categoryButton3").onclick = function () {
     document.getElementById("categoryButton3").setAttribute("class", "category-button-active");
     document.getElementById("categoryButton4").setAttribute("class", "category-button");
     document.getElementById("categoryButton5").setAttribute("class", "category-button");
+    document.getElementById("categoryButton6").setAttribute("class", "category-button");
+    document.getElementById("categoryButton7").setAttribute("class", "category-button");
 }
 document.getElementById("categoryButton4").onclick = function () {
     document.getElementById("categoryButton1").setAttribute("class", "category-button");
@@ -78,6 +84,8 @@ document.getElementById("categoryButton4").onclick = function () {
     document.getElementById("categoryButton3").setAttribute("class", "category-button");
     document.getElementById("categoryButton4").setAttribute("class", "category-button-active");
     document.getElementById("categoryButton5").setAttribute("class", "category-button");
+    document.getElementById("categoryButton6").setAttribute("class", "category-button");
+    document.getElementById("categoryButton7").setAttribute("class", "category-button");
 }
 document.getElementById("categoryButton5").onclick = function () {
     document.getElementById("categoryButton1").setAttribute("class", "category-button");
@@ -85,4 +93,34 @@ document.getElementById("categoryButton5").onclick = function () {
     document.getElementById("categoryButton3").setAttribute("class", "category-button");
     document.getElementById("categoryButton4").setAttribute("class", "category-button");
     document.getElementById("categoryButton5").setAttribute("class", "category-button-active");
+    document.getElementById("categoryButton6").setAttribute("class", "category-button");
+    document.getElementById("categoryButton7").setAttribute("class", "category-button");
+}
+document.getElementById("categoryButton6").onclick = function () {
+    document.getElementById("categoryButton1").setAttribute("class", "category-button");
+    document.getElementById("categoryButton2").setAttribute("class", "category-button");
+    document.getElementById("categoryButton3").setAttribute("class", "category-button");
+    document.getElementById("categoryButton4").setAttribute("class", "category-button");
+    document.getElementById("categoryButton5").setAttribute("class", "category-button");
+    document.getElementById("categoryButton6").setAttribute("class", "category-button-active");
+    document.getElementById("categoryButton7").setAttribute("class", "category-button");
+}
+document.getElementById("categoryButton7").onclick = function () {
+    document.getElementById("categoryButton1").setAttribute("class", "category-button");
+    document.getElementById("categoryButton2").setAttribute("class", "category-button");
+    document.getElementById("categoryButton3").setAttribute("class", "category-button");
+    document.getElementById("categoryButton4").setAttribute("class", "category-button");
+    document.getElementById("categoryButton5").setAttribute("class", "category-button");
+    document.getElementById("categoryButton6").setAttribute("class", "category-button");
+    document.getElementById("categoryButton7").setAttribute("class", "category-button-active");
+}
+
+let prevVal = 5;
+let nextVal = -5;
+
+document.getElementById("prev").onclick = function () {
+    document.getElementById("foodCardContainer").style.right = (prevVal + "rem");
+}
+document.getElementById("next").onclick = function () {
+    document.getElementById("foodCardContainer").style.right = (nextVal + "rem");
 }
