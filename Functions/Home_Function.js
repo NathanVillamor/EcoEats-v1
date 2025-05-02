@@ -115,12 +115,32 @@ document.getElementById("categoryButton7").onclick = function () {
     document.getElementById("categoryButton7").setAttribute("class", "category-button-active");
 }
 
-let prevVal = 5;
-let nextVal = -5;
+let prevVal = 3;
+let nextVal = -3;
+let totalSlide = 0;
 
 document.getElementById("prev").onclick = function () {
-    document.getElementById("foodCardContainer").style.right = (prevVal + "rem");
+    nextVal = nextVal + -6;
+    document.getElementById("foodCardContainer").style.right = (nextVal + "rem");
+    totalSlide++;
+
+    // if(totalSlide == 2) {
+    //     document.getElementById("prev").disabled = true;
+    // }
+    // else {
+    //     document.getElementById("prev").disabled = false;
+    // }
 }
 document.getElementById("next").onclick = function () {
+    nextVal = nextVal + 6;
     document.getElementById("foodCardContainer").style.right = (nextVal + "rem");
+    totalSlide--;
+    
+    // if(totalSlide == -2) {
+    //     document.getElementById("next").disabled = true;
+    // }
+    // else {
+    //     document.getElementById("next").disabled = false;
+    // }
 }
+

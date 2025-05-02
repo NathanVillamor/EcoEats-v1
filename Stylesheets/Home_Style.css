@@ -426,8 +426,8 @@ main .food-slide-text {
     background-color: var(--light-green);
     box-shadow: var(--shadow);
 
-    padding: 1rem 1.5rem;
-    height: 90%;
+    padding: 1rem 0;
+    height: 95%;
     width: 100%;
 }
 
@@ -436,7 +436,7 @@ main .food-slide-text {
     align-items: center;
     justify-content: space-between;
 
-    padding: 3rem 10rem 2.5rem 10rem;
+    padding: 3rem 10rem 2.75rem 10rem;
     height: 12.5%;
 }
 
@@ -499,6 +499,7 @@ main .food-slide-text {
 
     width: 100%;
     height: 80%;
+    padding: 1.5rem 0;
 }
 
 .menu-category-container {
@@ -509,6 +510,7 @@ main .food-slide-text {
     scrollbar-color: var(--gray) var(--light-green);
     background-color: var(--light-green);
 
+    padding: 0 1.5rem;
     width: 20%;
     height: 100%;
     z-index: 2;
@@ -523,7 +525,7 @@ main .food-slide-text {
 }
 
 .calorie-filter-container {
-    width: 80%;
+    width: 96%;
     z-index: 2;
     margin-bottom: 1rem;
 }
@@ -542,7 +544,7 @@ main .food-slide-text {
     border: 1px solid var(--green);
     text-shadow: none;
 
-    width: 80%;
+    width: 95%;
     border-radius: 10rem;
     margin-bottom: 1rem;
     transition: 0.5s;
@@ -572,7 +574,7 @@ main .food-slide-text {
     /* display: flex;
     position: absolute; */
     z-index: 0;
-    padding: 0 1rem 0 1rem;
+    padding: 0.5rem 1.5rem;
     gap: 1rem;
     width: 80%;
     height: 98%;
@@ -584,10 +586,11 @@ main .food-slide-text {
     position: absolute;
     overflow: hidden;
 
-    padding: 0 1rem 0 1rem;
-    gap: 1rem;
-    height: 98%;
+    gap: 0.25rem;
+    height: 95%;
+    right: 0;
 
+    transition: 0.5s;
 }
 
 .food-card {
@@ -788,6 +791,7 @@ main .food-slide-text {
     height: 10rem;
     width: 10rem;
     background-color: var(--gray);
+    box-shadow: var(--shadow);
 
     transition: 0.5s;
 }
@@ -796,7 +800,7 @@ main .food-slide-text {
     height: 11.5rem;
     width: 11rem;
     
-    box-shadow: var(--shadow);
+    box-shadow: 3px 3px 22px 8px rgb(255, 255, 255);
 }
 
 .image-compilation-row-1, .image-compilation-row-2, .image-compilation-row-3 {
