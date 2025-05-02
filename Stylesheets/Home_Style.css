@@ -457,36 +457,6 @@ main .food-slide-text {
     color: var(--green);
 }
 
-#calorieSlider {
-    -webkit-appearance: none;
-    appearance: none;
-    background: 1px solid var(--green);
-    cursor: pointer;
-    -webkit-transition: .2s; 
-    transition: .2s;
-}
-
-#calorieSlider:hover {
-    opacity: 1; /* Fully shown on mouse-over */
-  }
-
-#calorieSlider::-webkit-slider-runnable-track {
-    height: 0.25rem;
-    background: var(--grey); /* Green background */
-    cursor: pointer; /* Cursor on hover */
-}
-
-#calorieSlider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    margin-top: -3px; /* Centers thumb on the track */
-    background-color: var(--green);
-    border: 1px solid var(--black);
-    height: 0.75rem;
-    width: 0.75rem;  
-    border-radius: 100%;
-}
-
 .menu-header h1 {
     font-size: 1.75rem;
 }
@@ -503,14 +473,13 @@ main .food-slide-text {
 }
 
 .menu-category-container {
-    
     overflow: hidden;
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: var(--gray) var(--light-green);
     background-color: var(--light-green);
 
-    padding: 0 1.5rem;
+    padding: 0 1.75rem;
     width: 20%;
     height: 100%;
     z-index: 2;
@@ -518,24 +487,15 @@ main .food-slide-text {
 
 .menu-category-container::-webkit-scrollbar-track {
     background-color: var(--green);
+    margin: 0.25rem 0.25rem;
 }
 
 .menu-category-container::-webkit-scrollbar-thumb {
     background-color: var(--green);
 }
 
-.calorie-filter-container {
-    width: 96%;
-    z-index: 2;
-    margin-bottom: 1rem;
-}
-
-.calorie-filter-container h4 {
-    margin-bottom: 0.25rem;
-}
-
-.calorie-filter-container input {
-    width: 95%;
+.category-container {
+    padding: 1rem 0;
 }
 
 .category-button {
@@ -544,7 +504,8 @@ main .food-slide-text {
     border: 1px solid var(--green);
     text-shadow: none;
 
-    width: 95%;
+    width: 100%;
+    height: 2.5rem;
     border-radius: 10rem;
     margin-bottom: 1rem;
     transition: 0.5s;
@@ -574,7 +535,7 @@ main .food-slide-text {
     /* display: flex;
     position: absolute; */
     z-index: 0;
-    padding: 0.5rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     gap: 1rem;
     width: 80%;
     height: 98%;
@@ -604,6 +565,38 @@ main .food-slide-text {
     z-index: 1;
 
     transition: 0.5s;
+}
+
+.food-image {
+    background-color: red;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0.5rem 0.5rem 0 0;
+
+    width: 100%;
+    height: 65%;
+}
+
+.food-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding: 0.5rem 1.5rem;
+}
+
+.star-container {
+    display: flex;
+    align-items: center;
+    color: var(--gray);
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.30rem;
+}
+
+.star-container img {
+    width: auto;
+    height: 0.70rem;
 }
 
 .menu-sandwich, .menu-chicken, .menu-burger, .menu-pork, .menu-dessert, .menu-juice {

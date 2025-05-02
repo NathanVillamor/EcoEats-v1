@@ -47,9 +47,6 @@ document.getElementById("foodSlide3").onclick = function() {
 
 }
 
-document.getElementById("calorieSlider").onchange = function () {
-    document.getElementById("calorieNumber").innerHTML = document.getElementById("calorieSlider").value;
-}
 
 document.getElementById("categoryButton1").onclick = function () {
     document.querySelector(".menu-pasta").style.display = "flex";
