@@ -5,7 +5,7 @@ window.addEventListener('scroll', () => {
         document.querySelector("nav").style.boxShadow = "-3px 3px 22px -8px rgba(0,0,0,0.69)";
         document.getElementById("navSignup").setAttribute("class", "nav-button-scroll");
         document.getElementById("navLogin").setAttribute("class", "nav-button-scroll");
-    
+        document.getElementById("navSignup").style.width = "6rem";
     }
     else {
         document.querySelector("nav").style.backgroundColor = "transparent";

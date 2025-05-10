@@ -34,6 +34,8 @@ p {
 button {
     padding: 0.5rem 1rem 0.5rem 1rem;
     border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 /* SPECIFIC CSS */
@@ -44,7 +46,7 @@ main {
     flex-direction: column;
     position: relative;
 
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .dashboard-header {
@@ -87,6 +89,7 @@ nav .button-group {
     gap: 0.75rem;
 }
 
+
 nav .dashboard-profile {
     background-color: var(--gray);
     text-align: center;
@@ -106,6 +109,8 @@ nav .dashboard-cart {
 .header-category {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 1.75rem;
 
     width: 100%;
@@ -134,7 +139,55 @@ nav .dashboard-cart {
     height: 5rem;
     width: 5rem;
     border-radius: 100%;
+    cursor: pointer;
 }
+
+#pastaCategory {
+    background-image: url(/Assets/Dashboard-Food-Categories/pasta.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#pastaCategory:hover {
+    background-color: black;
+}
+#burgerCategory {
+    background-image: url(/Assets/Dashboard-Food-Categories/burger.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#sandwichCategory {
+    background-image: url(/Assets/Dashboard-Food-Categories/sandwich.avif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#chickenCategory {
+    background-image: url(/Assets/Dashboard-Food-Categories/chicken.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#porkCategory {
+    background-image: url(/Assets/Dashboard-Food-Categories/pork.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#dessertCategory {
+    background-image: url(/Assets/Dashboard-Food-Categories/dessert.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#juiceCategory {
+    background-image: url(/Assets/Dashboard-Food-Categories/juice.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 
 /* HEADER BODY */
 .header-body {
@@ -158,6 +211,7 @@ nav .dashboard-cart {
     border-radius: 100%;
     width: auto;
     height: 40rem;
+    box-shadow: var(--shadow);
 }
 
 /* CART */
