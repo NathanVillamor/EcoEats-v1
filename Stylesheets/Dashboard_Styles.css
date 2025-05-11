@@ -42,6 +42,12 @@ button {
     font-weight: bold;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /* SPECIFIC CSS */
 
 /* DASHBOARD HEADER */
@@ -95,19 +101,24 @@ nav .button-group {
     gap: 0.75rem;
 }
 
+nav .button-group i {
+    font-size: 1.25rem;
+}
+
+nav .button-group button {
+    border: 1px solid grey;
+}
 
 nav .dashboard-profile {
-    background-color: var(--gray);
-    text-align: center;
 
     border-radius: 100%;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3rem;
+    height: 3rem;
 }
 
 nav .dashboard-receipt {
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 3rem;
+    width: 3rem;
 }
 
 /* DASHBOARD HEADER CATEGORY  */
@@ -250,14 +261,18 @@ nav .dashboard-receipt {
     font-size: 2rem;
 }
 
-.best-seller-picture img {
+.best-seller-picture {
     position: absolute;
+    background-image: url(/Assets/FoodImages/DISHES/Pork\ and\ Broccoli\ Grain\ Bowl.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
     border-radius: 100%;
-    top: 5rem;
+    top: 7.5rem;
     right: 2rem;
-    width: auto;
-    height: 27.5rem;
+    width: 25rem;
+    height: 25rem;
     box-shadow: var(--shadow);
 }
 
@@ -270,13 +285,116 @@ nav .dashboard-receipt {
 }
 
 .card-container-1, .card-container-2 {
-    width: 50%;
+    width: 80%;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 2.5rem;
 }
 
 .best-seller-1, .best-seller-2, .best-seller-3, .best-seller-4 {
     display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 42.5%;
+    height: 100%;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.best-seller-active {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 42.5%;
+    height: 100%;
+    padding: 1rem;
+    transform: scale(1.1);
+    background-color: var(--green);
+    color: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.best-seller-active .bestseller-footer button {
+    background-color: white;
+    color: var(--green);
+    box-shadow: var(--shadow);
+}
+
+.best-seller-active .bestseller-star {
+    background-color: white;
+}
+
+.best-seller-active .bestseller-star p {
+    color: var(--black);
+}
+
+.bestseller-text-container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.40rem;
+    
+    width: 50%;
+}
+
+.bestseller-text-container h1 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+}
+
+.bestseller-text-container small {
+    color: var(--gray);
+    line-height: 0.05rem;
+    font-size: 0.70rem;
+}
+
+.bestseller-nutrition {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 2rem;
+}
+
+.bestseller-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bestseller-star {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    width: 3.25rem;
+    background-color: var(--green);
+    padding: 0.1rem 0.5rem;
+    border-radius: 1rem;
+    margin-bottom: 0.40rem;
+}
+
+.bestseller-star i {
+    font-size: 0.75rem;
+    color: yellow;
+}
+
+.bestseller-star p {
+    font-weight: 500;
+    color: var(--white);
+}
+
+#toCart {
+    padding: 0.5rem;
+    border-radius: 100%;
+    border: none;
+    background-color: var(--green);
+    color: var(--white);
+    
+    transition: 0.3s;
+}
+
+#toCart:hover {
+    transform: scale(1.2);
+    box-shadow: var(--shadow);
 }
 
 .best-seller-img-1 {
@@ -287,6 +405,7 @@ nav .dashboard-receipt {
     height: 10rem;
     width: 10rem;
     border-radius: 100%;
+    box-shadow: var(--shadow);
 }
 .best-seller-img-2 {
     background-image: url("/Assets/FoodImages/DISHES/CHICKEN\ SHAWARMA\ DINNER.avif");
@@ -296,6 +415,7 @@ nav .dashboard-receipt {
     height: 10rem;
     width: 10rem;
     border-radius: 100%;
+    box-shadow: var(--shadow)
 }
 .best-seller-img-3 {
     background-image: url("/Assets/FoodImages/DISHES/CHICKEN\ STIR-FRY.avif");
@@ -305,6 +425,7 @@ nav .dashboard-receipt {
     height: 10rem;
     width: 10rem;
     border-radius: 100%;
+    box-shadow: var(--shadow)
 }
 .best-seller-img-4 {
     background-image: url("/Assets/FoodImages/DISHES/ONE-PAN\ LEMON\ CHICKEN\ &\ ORZO.avif");
@@ -314,6 +435,7 @@ nav .dashboard-receipt {
     height: 10rem;
     width: 10rem;
     border-radius: 100%;
+    box-shadow: var(--shadow)
 }
 
 /* .best-seller-cards div img {
@@ -323,14 +445,12 @@ nav .dashboard-receipt {
     
 } */
 
-.best-seller-1, .best-seller-2, .best-seller-3, .best-seller-4 {}
-
 
 /* SELECTIONS */
 .pasta-selection, .burger-selection, .sandwich-selection, .chicken-selection, .pork-selection, .dessert-selection, .juice-selection {
     padding: 2rem;
     background-color: var(--white);
-    height: 125vh;
+    height: 100vh;
     width: 100%;
 }
 
@@ -345,21 +465,71 @@ nav .dashboard-receipt {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(4, 18rem);
-    /* grid-template-rows: repeat(3. 10rem); */
     grid-column-gap: 1.5rem;
-    grid-row-gap: 1rem;
+    grid-row-gap: 1.5rem;
     padding: 2rem;
 
 }
 
 .food-card {
+    display: flex;
+    flex-direction: column;
     box-shadow: var(--shadow);
+    border-radius: 0.5rem;
 }
 
+.food-card .food-card-img {
+    width: 100%;
+    height: 65%;
+    border-radius: 0.5rem 0.5rem 0 0;
+    background-color: rebeccapurple;
+}
 
+.food-card .food-card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 35%;
+    padding: 0.5rem 1.5rem;
+}
 
+.food-card-nutrition {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
 
+.food-card-nutrition small {
+    color: var(--gray);
+    font-size: 0.70rem;
+}
 
+.food-card-text-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.food-card-star-container {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    height: 1.25rem;
+    width: 3.25rem;
+    background-color: var(--green);
+    padding: 0.1rem 0.5rem;
+    border-radius: 1rem;
+}
+
+.food-card-star-container i {
+    color: yellow;
+    font-size: 0.75rem;
+}
+
+.food-card-star-container p {
+    font-weight: 500;
+    color: var(--white);
+}
 
 
 
@@ -369,15 +539,20 @@ nav .dashboard-receipt {
     position: fixed;
     width: 3rem;
     height: 3rem;
-    background-color: red;
+    background-color: var(--white);
+    border: 1px solid grey;
     right: 1rem;
     bottom: 1rem;
+    box-shadow: var(--shadow);
 
     transition: 0.5s;
 }
 
 #navCartBtn:hover {
-    transform: scale(1.1);
+    background-color: var(--green);
+    color: var(--white);
+    border: transparent;
+    transform: scale(1.2);
 }
 
 .cart {
@@ -423,24 +598,150 @@ nav .dashboard-receipt {
 }
 
 .basket-item {
+    display: flex;
     background-color: blue;
     
     border-bottom: 1px solid rgb(240, 239, 239);
-    height: 20%;
+    height: 55%;
     width: 99.5%;
     margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+#basket-img {
+    height: 100%;
+    width: 30%;
+    background-color: red;
+    border-radius: 0.5rem;
+}
+
+#basket-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    width: 70%;
+}
+
+.basket-nutrition-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.basket-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quantity-container {
+    display: flex;
+    width: fit-content;
+    height: 2rem;
+    border: 1px solid grey;
+    background-color: var(--white);
+}
+
+.quantity-container button {
+    text-align: center;
+    width: 0.5rem;
+    height: 1.5rem;
+    border: none;
+    border-radius: 0;
+    font-size: 0.5rem;
+    background-color: transparent;
+}
+
+.quantity-container input {
+    text-align: center;
+    width: 1.25rem;
+    border: none;
 }
 
 /* CART FOOTER */
-.cart-footer{
-    height: 18%;
+.cart-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    /* height: 20%; */
 }
 
 .total-container {
     display: flex;
     justify-content: space-between;
+    height: 6.5rem;
+    width: 100%;
+    /* box-shadow: var(--shadow); */
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    padding: 0.75rem 1.5rem;
+}
 
-    margin-top: 1rem;
+.total-sub {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.fee-cont {
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 0.35rem;
+}
+
+
+.total-container div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.mop-container {
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mop-container div {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.25rem;
+    width: 30%;
+    height: 3.5rem;
+    border-radius: 0.5rem;
+    /* background-color: red; */
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 1px solid var(--gray);
+}
+
+.mop-container small {
+    display: none;
+}
+
+.mop-container i {
+    font-size: 2rem;
+}
+
+.mop-container div:hover {
+    /* background-color: ; */
 }
 
 .total-container h1 {
@@ -453,6 +754,12 @@ nav .dashboard-receipt {
     margin-top: 1rem;
     width: 100%;
     height: 48px;
+
+    transition: 0.3s;
+}
+
+.cart-footer button:hover {
+    transform: scale(1.05);
 }
 
 
