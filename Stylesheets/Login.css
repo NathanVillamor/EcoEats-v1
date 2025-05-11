@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --green: #b6cf29;
+    --dark-green: #53651a;
+    --light-green: #daffd3;
+    --black: #333333;
+    --gray: gray;
+    --grey: #f7f7f7;
+    --white: #FEFEFE;
+
+    --shadow: -3px 3px 22px -8px rgba(0,0,0,0.69);
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    height: 100vh;
+    width: 100%;
+}
+
+p {
+    font-size: 0.75rem;
+}
+
+/* SPECIFIC CSS */
+nav {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 2rem 5rem 2rem 5rem;
+    margin-bottom: 1rem;
+    height: 3.125rem;
+    width: 100%;
+    z-index: 5;
+
+    transition: 0.5s;
+}
+
+nav img {
+    width: auto;
+    cursor: pointer;
+
+    border-radius: 100%;
+    height: 3rem;
+}
+
+nav i {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* MAIN */
+main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.form-block {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    background-color: var(--green);
+    box-shadow: var(--shadow);
+}
+
+.form-block div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 60%;
+
+    transition: 0.5s;
+}
+
+.form-block div button {
+    width: fit-content;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--gray);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-block .to-signup {
+    display: none;
+}
+
+.form-block .to-login {
+    display: flex;
+}
