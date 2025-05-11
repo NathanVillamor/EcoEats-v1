@@ -28,7 +28,7 @@
                 </div>
      
                 <div class="button-group">
-                    <button class="dashboard-cart" id="navCartBtn">  </button>
+                    <button class="dashboard-receipt" id="navReceiptBtn">  </button>
                     <button class="dashboard-profile" id="navProfileBtn"> </button>
                 </div>
             </nav>
@@ -39,7 +39,28 @@
     
                 <div class="category-container">
     
-    
+                    <a href="#pasta-section">
+                        <div class="category category-pasta"></div>
+                    </a>
+                    <a href="#burger-section">
+                        <div class="category category-burger"></div>
+                    </a>
+                    <a href="#sandwich-section">
+                        <div class="category category-sandwich"></div>
+                    </a>
+                    <a href="#chicken-section">
+                        <div class="category category-chicken"></div>
+                    </a>
+                    <a href="#pork-section">
+                        <div class="category category-pork"></div>
+                    </a>
+                    <a href="#dessert-section">
+                        <div class="category category-dessert"></div>
+                    </a>
+                    <a href="#juice-section">
+                        <div class="category category-juice"></div>
+                    </a>
+
                 </div>
     
             </div>
@@ -103,7 +124,7 @@
 
             </div>
 
-            <section class="pasta-selection">
+            <section class="pasta-selection" id="pasta-section">
                 <h1> Pasta </h1>
 
                 <div class="selection-card-container">
@@ -141,7 +162,7 @@
                     
             </section>
     
-            <section class="burger-selection">
+            <section class="burger-selection" id="burger-section">
                 <h1> Chicken </h1>
 
                 <div class="selection-card-container">
@@ -179,7 +200,7 @@
                 
             </section>
     
-            <section class="sandwich-selection">
+            <section class="sandwich-selection" id="sandwich-section">
                 <h1> Sandwich </h1>
 
                 <div class="selection-card-container">
@@ -217,7 +238,7 @@
     
             </section>
     
-            <section class="chicken-selection">
+            <section class="chicken-selection" id="chicken-section">
                 <h1> Chicken </h1>
 
                 <div class="selection-card-container">
@@ -255,7 +276,7 @@
     
             </section>
     
-            <section class="pork-selection">
+            <section class="pork-selection" id="pork-section">
                 <h1> Pork </h1>
 
                 <div class="selection-card-container">
@@ -293,7 +314,7 @@
     
             </section>
     
-            <section class="dessert-selection">
+            <section class="dessert-selection" id="dessert-section">
                 <h1> Dessert </h1>
                 
                 <div class="selection-card-container">
@@ -331,7 +352,7 @@
     
             </section>
     
-            <section class="juice-selection">
+            <section class="juice-selection" id="juice-section">
                 <h1> Juice </h1>
 
                 <div class="selection-card-container">
@@ -375,6 +396,7 @@
         <section class="cart" id="cartContainer">
     
             <div class="cart-header">
+                <h1> Basket </h1>
                 <img src="/Assets/xmark-solid.svg" alt="" id="cartExit">
             </div>
 
@@ -395,6 +417,7 @@
 
                 <div class="mop-container">   </div>
 
+
                 <button class="order-now"> Order Now </button>
             </div>
 
@@ -406,8 +429,10 @@
                 <img src="/Assets/xmark-solid.svg" alt="" id="profileExit">
             </div>
          </section>
-
+         
+         <button class="dashboard-cart" id="navCartBtn">  </button>
     </main>
+
 
 </body>
 </html>

@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --green: #b6cf29;
     --light-green: #daffd3;
@@ -62,6 +66,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
 
     height: 5.5rem;
     margin-bottom: 1.25rem;
@@ -76,6 +81,7 @@ nav input {
     height: 2.5rem;
     width: 22.5rem;
     border-radius: 0.5rem;
+    padding: 0 1.5rem;
 }
 
 .nav-group {
@@ -99,7 +105,7 @@ nav .dashboard-profile {
     height: 2.5rem;
 }
 
-nav .dashboard-cart {
+nav .dashboard-receipt {
     height: 2.5rem;
     width: 2.5rem;
 }
@@ -129,9 +135,41 @@ nav .dashboard-cart {
 
 .category-container {
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
     
-    gap: 2.5rem;
+    gap: 1.5rem;
+}
+
+.category-container .category {
+    background-color: rebeccapurple;
+    box-shadow: var(--shadow);
+    border-radius: 0.5rem;
+    width: 9.5rem;
+    height: 7rem;
+
+    transition: 0.5s;
+}
+
+.category:hover {
+    background-color: transparent;
+    border: 1px solid var(--green);
+    color: var(--green);
+    transform: scale(1.05);
+}
+
+.category-active {
+    box-shadow: var(--shadow);
+    border-radius: 0.5rem;
+    width: 9.5rem;
+    height: 7rem;
+
+    background-color: transparent;
+    border: 1px solid var(--green);
+    color: var(--green);
+    transform: scale(1.05);
+
+    transition: 0.5s;
 }
 
 .food-category-card {
@@ -290,13 +328,14 @@ nav .dashboard-cart {
 
 /* SELECTIONS */
 .pasta-selection, .burger-selection, .sandwich-selection, .chicken-selection, .pork-selection, .dessert-selection, .juice-selection {
+    padding: 2rem;
     background-color: var(--white);
     height: 125vh;
     width: 100%;
 }
 
 .pasta-selection h1, .burger-selection h1, .sandwich-selection h1, .chicken-selection h1, .pork-selection h1, .dessert-selection h1, .juice-selection h1 {
-    margin-left: 8rem;
+    margin-left: 6rem;
     font-size: 2rem;
 }
 
@@ -325,6 +364,22 @@ nav .dashboard-cart {
 
 
 /* CART */
+
+#navCartBtn {
+    position: fixed;
+    width: 3rem;
+    height: 3rem;
+    background-color: red;
+    right: 1rem;
+    bottom: 1rem;
+
+    transition: 0.5s;
+}
+
+#navCartBtn:hover {
+    transform: scale(1.1);
+}
+
 .cart {
     display: flex; /* FLEX */
     flex-direction: column;
@@ -344,12 +399,18 @@ nav .dashboard-cart {
 
 /* CART HEADER */
 .cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     height: 8%;
+    margin-bottom: 1rem;
 }
 
 .cart img {
     height: auto;
     width: 1.25rem;
+    cursor: pointer;
 }
 
 /* CART BODY */
