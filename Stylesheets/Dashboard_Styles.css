@@ -31,6 +31,10 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+}
+
 p {
     font-size: 0.75rem;
 }
@@ -87,8 +91,13 @@ nav input {
     height: 2.5rem;
     width: 22.5rem;
     border-radius: 0.5rem;
-    padding: 0 1.5rem;
+    padding: 0 2.25rem;
     border: 1px solid var(--gray);
+
+    background-image: url(/Assets/location-dot-solid\ .svg);
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    background-position: 0.75rem 0.5rem;
 }
 
 .nav-group {
@@ -146,11 +155,14 @@ nav .dashboard-receipt {
 .header-category input {
     background-color: #f7f7f7;
     border-color: transparent;
-
+    background-image: url(/Assets/magnifying-glass-solid.svg);
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+    background-position: 1rem 0.5rem;
     height: 2.5rem;
     width: 100%;
     border-radius: 20px;
-    padding-left: 3.75rem;
+    padding-left: 3.25rem;
 }
 
 .category-container {
@@ -162,7 +174,10 @@ nav .dashboard-receipt {
 }
 
 .category-container .category {
-    background-color: rebeccapurple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(var(--green), green);
     box-shadow: var(--shadow);
     border-radius: 0.5rem;
     width: 9.5rem;
@@ -171,11 +186,21 @@ nav .dashboard-receipt {
     transition: 0.5s;
 }
 
+.category p {
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1rem;
+    text-shadow: 0.75px 1px var(--black);
+}
+
 .category:hover {
     background-color: transparent;
     border: 1px solid var(--green);
-    color: var(--green);
     transform: scale(1.05);
+}
+
+.category:hover p {
+    color: var(--white);
 }
 
 .category-active {
@@ -544,22 +569,30 @@ nav .dashboard-receipt {
 /* CART */
 
 #navCartBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
-    width: 3rem;
-    height: 3rem;
-    background-color: var(--white);
-    border: 1px solid var(--gray);
-    right: 1rem;
-    bottom: 1rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: var(--green);
+    border: transparent;
+    color: var(--white);
+    right: 1.5rem;
+    bottom: 1.5rem;
     box-shadow: var(--shadow);
 
     transition: 0.5s;
 }
 
+#navCartBtn i {
+    font-size: 1.5rem;
+}
+
 #navCartBtn:hover {
-    background-color: var(--green);
-    color: var(--white);
-    border: transparent;
+    background-color: var(--white);
+    color: var(--green);
+    border: 2px solid var(--green);
     transform: scale(1.2);
 }
 
@@ -856,3 +889,44 @@ nav .dashboard-receipt {
     height: auto;
     width: 1.25rem;
 }
+
+
+
+
+
+
+
+
+
+
+/* RECEIPT */
+.receipt {
+    display: flex; /* FLEX */
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+
+    padding: 1.5rem;
+    height: 100%;
+    width: 35rem;
+    right: -35rem;
+    z-index: 5;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+
+    transition: 0.5s;
+}
+
+.receipt-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 8%;
+}
+
+.receipt img {
+    height: auto;
+    width: 1.25rem;
+    cursor: pointer;
+}
+
