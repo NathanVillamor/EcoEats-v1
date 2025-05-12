@@ -12,3 +12,23 @@ document.getElementById("toLoginForm").onclick = function () {
 }
 
 // FORM FUNCTIONALITY
+// Buttons
+let signUpBtn = document.getElementById("signupBtn");
+let loginBtn = document.getElementById("loginBtn");
+
+// Inpus
+let signupEmail = document.getElementById("signup-email").value;
+let signupPassword = document.getElementById("signup-password").value;
+let signupConfirm = document.getElementById("signup-confirm").value;
+
+let loginEmail = document.getElementById("login-email").value;
+let loginPassword = document.getElementById("login-password").value;
+
+let signupEmailContainer = [];
+let signupPasswordContainer = [];
+
+signUpBtn.onclick = function() {
+
+    
+
+}

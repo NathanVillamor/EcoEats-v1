@@ -177,7 +177,8 @@ nav .dashboard-receipt {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(var(--green), green);
+    /* background: linear-gradient(var(--green), green); */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(/Assets/categoryBg.jpg) ;
     box-shadow: var(--shadow);
     border-radius: 0.5rem;
     width: 9.5rem;
@@ -191,16 +192,19 @@ nav .dashboard-receipt {
     font-weight: bold;
     font-size: 1rem;
     text-shadow: 0.75px 1px var(--black);
+
+    transition: 0.3s;
 }
 
 .category:hover {
     background-color: transparent;
     border: 1px solid var(--green);
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .category:hover p {
     color: var(--white);
+    font-size: 1.1rem;
 }
 
 .category-active {
@@ -647,11 +651,10 @@ nav .dashboard-receipt {
     border-radius: 0.5rem;
 }
 
-.basket-item:first-child {
-    display: flex;
-}
-
 #basket-img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 100%;
     width: 30%;
     background-color: var(--gray);
@@ -769,7 +772,7 @@ nav .dashboard-receipt {
     gap: 1rem;
 }
 
-.mop-container div {
+.normal-mop {
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -824,6 +827,10 @@ nav .dashboard-receipt {
     border: 1px solid var(--grey);
 
     transition: 0.3s;
+}
+
+.mop-active small {
+    display: block;
 }
 
 .total-container h1 {
@@ -930,3 +937,33 @@ nav .dashboard-receipt {
     cursor: pointer;
 }
 
+
+
+
+
+
+
+
+
+/* POP UPS */
+.pop {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    text-align: center;
+    width: 15rem;
+    height: 10rem;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    right: 42%;
+    top: 35%;
+    gap: 0.75rem;
+    opacity: 0.95;
+}
+
+.pop i {
+    font-size: 3rem;
+    color: var(--green);
+}
