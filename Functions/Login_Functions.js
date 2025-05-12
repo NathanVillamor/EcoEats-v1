@@ -1,3 +1,4 @@
+// FORM DIVIDER FUNCTIONALITY
 document.getElementById("toSignupForm").onclick = function () {
     document.getElementById("form-block").style.left = "50%";
     document.querySelector(".to-login").style.display = "none";
@@ -9,3 +10,5 @@ document.getElementById("toLoginForm").onclick = function () {
     document.querySelector(".to-login").style.display = "flex";
     document.querySelector(".to-signup").style.display = "none";
 }
+
+// FORM FUNCTIONALITY
