@@ -112,3 +112,7 @@ function loginIntervalTime() {
 
     }, 100);
 }
+
+document.getElementById("ecoEatLogo").onclick = function() {
+    window.location.href = "Home.html";
+}

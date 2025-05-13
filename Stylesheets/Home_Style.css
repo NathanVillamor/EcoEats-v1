@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --green: #b6cf29;
     --dark-green: #53651a;
@@ -35,7 +39,7 @@ button {
     padding: 0.5rem 1rem 0.5rem 1rem;
     border-radius: 0.5rem;
     box-shadow: var(--shadow);
-    text-shadow: 0.75px 1px var(--black);
+    text-shadow: 1.25px 1px var(--black);
     cursor: pointer;
     transition: 0.5s;
     font-weight: bold;
@@ -71,15 +75,21 @@ nav ul {
 }
 
 nav ul li {
+    cursor: pointer;
     list-style-type: none;
     color: var(--white);
-    text-shadow: 0.75px 1px var(--black);
+    text-shadow: 1.25px 1px var(--black);
     font-size: .9rem;
 
-    transition: 0.5s;
 }
 
-nav ul li:hover {
+nav ul li a {
+    transition: 0.5s;
+    color: var(--white);
+    text-decoration: none;
+}
+
+nav ul li a:hover {
     color: var(--green);
 }
 
@@ -92,7 +102,7 @@ nav .nav-signup {
     background-color: transparent;
     border: 2px solid var(--green);
     color: var(--green);
-    text-shadow: 0.75px 1px var(--black);
+    text-shadow: 1.25px 1px var(--black);
     height: 2rem;
     width: 6rem;
 
@@ -135,7 +145,7 @@ main .hero-text-container {
     z-index: 3;
 
     color: var(--white);
-    text-shadow: 0.75px 1px var(--black);
+    text-shadow: 1.25px 1px var(--black);
 }
 
 .hero-text-container button {
@@ -153,8 +163,8 @@ main .hero-text-container {
 }
 
 main h1 {
-    font-size: 4rem;
-    line-height: 4.5rem;
+    font-size: 6rem;
+    line-height: 6rem;
     transition: 0.5s;
 }
 
@@ -164,15 +174,20 @@ main h2:last-of-type {
 
 main .hero-text-container button {
     margin-top: 1.25rem;
-    width: 6.5rem;
+    width: 8rem;
+    height: 3rem;
 }
 
 main .hero-text-container button:hover {
     background-color: transparent;
     border: 2px solid var(--green);
     color: var(--green);
-    width: 7rem;
-    text-shadow: 0.75px 1px var(--black);
+    transform: scale(1.05);
+    text-shadow: 1.25px 1px var(--black);
+}
+
+.hero-text-container p {
+    font-size: 1rem;
 }
 
 main .hero-food-img-container {
@@ -216,7 +231,7 @@ main .hero-food-selector-container {
     width: 90%;
     z-index: 4;
     box-shadow: var(--shadow);
-    text-shadow: 0.75px 1px var(--black);
+    text-shadow: 1.25px 1px var(--black);
 
     transition: 0.5s;
 }
@@ -236,7 +251,7 @@ main .food-slide-1:hover, .food-slide-2:hover, .food-slide-3:hover {
     align-items: center;
     gap: 1rem;
     border-radius: 10rem 0 0 10rem;
-    text-shadow: 0.75px 1px var(--black);
+    text-shadow: 1.25px 1px var(--black);
     z-index: 4;
 
     transition: 0.5s;
@@ -315,6 +330,7 @@ main .food-slide-text {
     gap: 0.5rem;
     padding: 0 1rem 1rem 1rem;
     width: 20%;
+    height: 15rem;
     border-radius: 0.5rem;
     box-shadow: var(--shadow);
 }
@@ -391,10 +407,11 @@ main .food-slide-text {
 
 .about-us-textbox p {
     margin-bottom: 1rem;
+    font-size: 1rem;
 }
 .about-us-textbox ul li {
-    font-size: 0.75rem;
-    
+    font-size: 1rem;
+    margin-bottom: 1rem;
     width: 90%;
 }
 
@@ -414,7 +431,7 @@ main .food-slide-text {
     background-color: transparent;
     border: 2px solid var(--green);
     color: var(--green);
-    text-shadow: 0.75px 1px var(--white);
+    text-shadow: 1.25px 1px var(--white);
     width: 7rem;
 }
 
@@ -528,7 +545,7 @@ main .food-slide-text {
     background-color: var(--green);
     border: 1px solid var(--green);
     color: var(--white);
-    text-shadow: 0.75px 1px var(--black);
+    text-shadow: 1.25px 1px var(--black);
 
     width: 95%;
     height: 2.5rem;
@@ -541,7 +558,7 @@ main .food-slide-text {
     background-color: var(--white);
     border: 1px solid var(--green);
     color: var(--green);
-    text-shadow: 0.75px 1px var(--white);
+    text-shadow: 1.25px 1px var(--white);
     padding: 0.75rem;
 }
 
@@ -618,7 +635,6 @@ main .food-slide-text {
 }
 
 .food-card-img {
-    background-color: red;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -732,7 +748,7 @@ main .food-slide-text {
 .customer-testimonial-header {
     display: flex;
     flex-direction: column;
-    text-shadow: 0.75px 1px var(--black);
+    text-shadow: 1.25px 1px var(--black);
     gap: 0.5rem;
 }
 
@@ -892,7 +908,7 @@ footer {
     width: 100%;
     background-color: var(--green);
     color: var(--white);
-    text-shadow: 0.75px 1px var(--black);
+    text-shadow: 1.25px 1px var(--black);
     box-shadow: var(--shadow);
 }
 

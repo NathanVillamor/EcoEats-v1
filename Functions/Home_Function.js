@@ -172,9 +172,14 @@ let prevVal = 3;
 let nextVal = -3;
 let totalSlide = 0;
 
+let foodCardContainer = document.querySelectorAll("#foodCardContainer");
+
+
 document.getElementById("prev").onclick = function () {
     nextVal = nextVal + -15;
-    document.getElementById("foodCardContainer").style.right = (nextVal + "rem");
+    for (let i = 0; i < foodCardContainer.length; i++) {
+        foodCardContainer[i].style.right = (nextVal + "rem");
+    }
     totalSlide++;
     document.getElementById("next").disabled = false;
 
@@ -187,7 +192,9 @@ document.getElementById("prev").onclick = function () {
 }
 document.getElementById("next").onclick = function () {
     nextVal = nextVal + 15;
-    document.getElementById("foodCardContainer").style.right = (nextVal + "rem");
+    for (let i = 0; i < foodCardContainer.length; i++) {
+        foodCardContainer[i].style.right = (nextVal + "rem");
+    }
     totalSlide--;
     document.getElementById("prev").disabled = false;
     
@@ -199,3 +206,19 @@ document.getElementById("next").onclick = function () {
     }
 }
 
+let homeToCart = document.querySelectorAll("#toCart");
+
+for (let index = 0; index < homeToCart.length; index++) {
+    homeToCart[index].onclick = function() {
+        window.location.href = "Login.html";
+    }
+}
+
+
+document.getElementById("orderNow").onclick = function() {
+    window.location.href = "Login.html";
+}
+
+document.getElementById("navSignup").onclick = function() {
+    window.location.href = "Login.html";
+}
