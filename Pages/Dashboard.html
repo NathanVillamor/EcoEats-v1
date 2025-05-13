@@ -40,7 +40,7 @@
     
                 <div class="category-container">
     
-                    <a href="pasta-section">
+                    <a href="#pasta-section">
                         <div class="category category-pasta">
                             <p> Pasta </p>
                         </div>
@@ -4195,6 +4195,41 @@
                 <h1> Profile </h1>
                 <img src="/Assets/xmark-solid.svg" alt="" id="profileExit">
             </div>
+
+            <div class="profile-body">
+
+                <div class="profile-top">
+                    <profile-img>
+                        <i class="fa-regular fa-circle-user"></i>
+                    </profile-img>
+
+                    <div class="profile-top-info">
+                        <h3> User </h3>
+                        <small> Standard User </small>
+                    </div>
+                </div>
+
+                <div class="profile-selections">
+                    <div class="profile-settings">
+                        <i class="fa-solid fa-gears"></i>
+                        <h4> Settings </h4>
+                    </div>
+
+                    <div class="profile-help">
+                        <i class="fa-solid fa-question"></i>
+                        <h4> Help Center </h4>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="profile-footer">
+                <div class="profile-logout" id="logoutBtn">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <h4> Logout </h4>
+                </div>
+            </div>
+
          </section>
          
          <button class="dashboard-cart" id="navCartBtn"> <i class="fa-solid fa-basket-shopping"></i> </button>
@@ -4223,6 +4258,7 @@
                     <div class="progressbar"><i class="fa-solid fa-motorcycle"></i></div>
 
                     <h3> Order #: <span id="order-number"></span></h2>
+                        <h3>  ₱ <span id="to-pay"></span></h3>
                     <small> Delivery: On the way </small> <br>
 
                     <button id="view-order"> View </button>
@@ -4233,6 +4269,7 @@
                     <div class="progressbar"><i class="fa-solid fa-motorcycle"></i></div>
 
                     <h3> Order #: <span id="order-number"></span></h2>
+                    <h3>  ₱ <span id="to-pay"></span></h3>
                     <small> Delivery: On the way </small> <br>
 
                     <button id="view-order"> View </button>
@@ -4243,6 +4280,7 @@
                     <div class="progressbar"><i class="fa-solid fa-motorcycle"></i></div>
 
                     <h3> Order #: <span id="order-number"></span></h2>
+                    <h3>  ₱ <span id="to-pay"></span></h3>
                     <small> Delivery: On the way </small> <br>
 
                     <button id="view-order"> View </button>
@@ -4253,6 +4291,18 @@
                     <div class="progressbar"><i class="fa-solid fa-motorcycle"></i></div>
 
                     <h3> Order #: <span id="order-number"></span></h2>
+                    <h3>  ₱ <span id="to-pay"></span></h3>
+                    <small> Delivery: On the way </small> <br>
+
+                    <button id="view-order"> View </button>
+                    <button id="complete-order"> Complete </button>
+                </div>
+                <div class="receipt-order">
+
+                    <div class="progressbar"><i class="fa-solid fa-motorcycle"></i></div>
+
+                    <h3> Order #: <span id="order-number"></span></h2>
+                    <h3>  ₱ <span id="to-pay"></span></h3>
                     <small> Delivery: On the way </small> <br>
 
                     <button id="view-order"> View </button>
@@ -4267,7 +4317,7 @@
         <div class="receipt-pop" id="receipt-pop">
 
             <div class="receipt-pop-header">
-                <h4> Order #: <span id="order-number"></span></h4>
+                <h4> Order #: <span id="orderPop-number"></span></h4>
                 <img src="/Assets/xmark-solid.svg" alt="" id="exitReceipt">
             </div>
 

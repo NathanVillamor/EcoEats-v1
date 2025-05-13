@@ -88,7 +88,6 @@ for (let i = 0 ; i < addToCartBtn.length ; i++) {
     addToCartBtn[i].onclick = function() {
         addToCart(itemPriceContainer[i], basketPriceContainer[i], calorieContainer[i], basketCaloriesContainer[i], proteinContainer[i], basketProteinContainer[i], foodTitleContainer[i], basketTitleContainer[i], foodCardImg[i], basketImgContainer[i], basketItemContainer[i], increaseContainer[i], decreaseContainer[i], itemQuantityContainer[i]);
         subtotalSum();
-        // subtotal = 0;
     }
 
 }
@@ -124,9 +123,10 @@ function addToCart (itemPrice, basketPrice, menuCalorie, basketCalorie, menuProt
         subtotal = 0;
     }
 
-    document.getElementById("receipt-subtotal").innerHTML = subtotalContainer.innerHTML;
-    document.getElementById("receipt-fee").innerHTML = feeContainer.innerHTML;
-    document.getElementById("receipt-total").innerHTML = totalContainer.innerHTML;
+    let receiptSubtotal = subtotalContainer.innerHTML;
+    let receiptFee = feeContainer.innerHTML;
+    let receiptTotal = totalContainer.innerHTML;
+    
 
     
     basketCalorie.innerHTML = menuCalorie.innerHTML + "kCal";
@@ -135,6 +135,9 @@ function addToCart (itemPrice, basketPrice, menuCalorie, basketCalorie, menuProt
 
     let parentBackground = window.getComputedStyle(menuImage).backgroundImage;
     basketImage.style.backgroundImage = parentBackground;
+
+    // RECEIPT FUNCTIONS
+
     
 }
 let receiptTitleList = document.querySelectorAll("#receipt-item-tltle");
@@ -168,33 +171,68 @@ function subtotalMinus() {
 let subtotalContainer = document.getElementById("subtotalAmount");
 let feeContainer = document.getElementById("feeAmount");
 let totalContainer = document.getElementById("totalAmount");
+
 let receiptOrderContainer = document.querySelectorAll(".receipt-order");
 let completeOrderBtnContainer = document.querySelectorAll("#complete-order");
 let viewOrderBtnContainer = document.querySelectorAll("#view-order");
+let receiptpopContainer = document.querySelectorAll("#receipt-pop");
+let exitReceiptIconContainer = document.querySelectorAll("#exitReceipt");
+let orderNumberContainer = document.querySelectorAll("#order-number");
+let orderPopNumberContainer = document.querySelectorAll("#orderPop-number");
+let receiptSubtotalContainer = document.querySelectorAll("#receipt-subtotal");
+let receiptFeeContainer = document.querySelectorAll("#receipt-fee");
+let receiptTotalContainer = document.querySelectorAll("#receipt-total");
+let toPayContainer = document.querySelectorAll("#to-pay");
+
 let receiptCount = 0;
 
 let subtotal = 0;
 let feetotal = 0;
 
-for (let index = 0; index < receiptOrderContainer.length; index++) {
+// for (let i = 0; i < receiptOrderContainer.length; i++) {
+//     receiptFunction(orderNumberContainer[i], orderPopNumberContainer[i], receiptpopContainer[i], receiptOrderContainer[i], exitReceiptIconContainer[i], viewOrderBtnContainer[i], completeOrderBtnContainer[i])
     
-    viewOrderBtnContainer[index].onclick = function() {
-        document.getElementById("receipt-pop").style.display = "flex";
+// }
+
+function receiptFunction(orderNum, orderPopNum, receiptPopup, receiptOrder, exitReceiptIcon, viewOrder, completeOrder, subtotalcont, feecont, totalcont, toPayCont) {
+
+    let orderNumber = Math.floor(Math.random() * 10000) + 1000;
+
+    orderNum.innerHTML = orderNumber;
+    orderPopNum.innerHTML = orderNumber;
+
+    receiptPopup.style.display = "flex";
+    receiptOrder.style.display = "block";
+
+    exitReceiptPop(exitReceiptIcon, receiptPopup);
+    viewReceiptPop(viewOrder, receiptPopup);
+    completeReceiptPop(completeOrder, receiptOrder);
+
+    subtotalcont.innerHTML = receiptSubtotal;
+    feecont.innerHTML = receiptFee;
+    totalcont.innerHTML = receiptTotal;
+    toPayCont.innerHTML = receiptTotal;
+
+}
+
+function exitReceiptPop(exitReceiptIcon, receiptPop) {
+    exitReceiptIcon.onclick = function() {
+        receiptPop.style.display = "none";
     }
-    
-    completeOrderBtnContainer[index].onclick = function() {
-        document.getElementById("receipt-order").display = "none";
+}
+
+function viewReceiptPop(viewOrderBtn, receiptPop) {
+    viewOrderBtn.onclick = function() {
+        receiptPop.style.display = "flex";
     }
-
-
-}
-document.getElementById("exitReceipt").onclick = function() {
-    document.getElementById("receipt-pop").style.display = "none";
 }
 
-function receiptFunction() {
-
+function completeReceiptPop(completeBtn, receiptOrder) {
+    completeBtn.onclick = function() {
+        receiptOrder.style.display = "none";
+    }
 }
+
 
 
 
@@ -221,14 +259,14 @@ cashBtn.onclick = function() {
         orderTime = 30;
         for (let index = 0; index < basketItemContainer.length; index++) {
             basketItemContainer[index].style.display = "none";
-            // receiptOrderContainer[receiptCount].style.display = "block";
-            
-            // document.getElementById("receipt-pop").style.display = "flex";
     
             subtotalContainer.innerHTML = 0;
             feeContainer.innerHTML = 0;
             totalContainer.innerHTML = 0;
             
+            for (let i = 0; i < receiptOrderContainer.length; i++) {
+            receiptFunction(orderNumberContainer[i], orderPopNumberContainer[i], receiptpopContainer[i], receiptOrderContainer[i], exitReceiptIconContainer[i], viewOrderBtnContainer[i], completeOrderBtnContainer[i], receiptSubtotalContainer[i], receiptFeeContainer[i], receiptTotalContainer[i], toPayContainer[i])
+            }
         }
         receiptCount++;
     }
