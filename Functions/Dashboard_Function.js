@@ -390,3 +390,8 @@ function orderIntervalTime() {
 
     }, 100);
 }
+
+// PROFILE
+document.getElementById("logoutBtn").onclick = function() {
+    window.location.href = "Home.html";
+}
