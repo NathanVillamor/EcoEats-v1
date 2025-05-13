@@ -40,18 +40,16 @@ let searchbar = document.getElementById("searchBar");
     
 // })
 
-searchbar.addEventListener("keypress", function(e) {
+searchbar.addEventListener('keyup', function(event) {
+  const query = searchbar.value.toLowerCase().trim();
 
-    if (e.key == "Enter") {
-        for (let index = 0; index < foodTitleContainer.length; index++) {
-            let match = searchbar.value.toLowerCase()
-            if (foodTitleContainer[index] == match) {
-                document.querySelector(match).scrollIntoView();
-            }
-        }
+  if (query) {
+    const targetDiv = document.querySelector("." + query);
+    if (targetDiv) {
+      targetDiv.scrollIntoView({  behavior: "smooth", block: "center", inline: "center"  });
     }
-
-})
+  }
+});
 
 
 
