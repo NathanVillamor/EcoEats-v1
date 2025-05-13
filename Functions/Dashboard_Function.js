@@ -151,7 +151,7 @@ function subtotalSum() {
         document.getElementById("receipt-subtotal").innerHTML = subtotalContainer.innerHTML;
         document.getElementById("receipt-fee").innerHTML = feeContainer.innerHTML;
         document.getElementById("receipt-total").innerHTML = totalContainer.innerHTML;
-
+        document.getElementById("to-pay").innerHTML = totalContainer.innerHTML;
     }
 }
 
@@ -164,7 +164,7 @@ function subtotalMinus() {
         document.getElementById("receipt-subtotal").innerHTML = subtotalContainer.innerHTML;
         document.getElementById("receipt-fee").innerHTML = feeContainer.innerHTML;
         document.getElementById("receipt-total").innerHTML = totalContainer.innerHTML;
-
+        document.getElementById("to-pay").innerHTML = totalContainer.innerHTML;
     }
 }
 
@@ -184,60 +184,77 @@ let receiptFeeContainer = document.querySelectorAll("#receipt-fee");
 let receiptTotalContainer = document.querySelectorAll("#receipt-total");
 let toPayContainer = document.querySelectorAll("#to-pay");
 
-let receiptCount = 0;
-
 let subtotal = 0;
 let feetotal = 0;
 
-// for (let i = 0; i < receiptOrderContainer.length; i++) {
-//     receiptFunction(orderNumberContainer[i], orderPopNumberContainer[i], receiptpopContainer[i], receiptOrderContainer[i], exitReceiptIconContainer[i], viewOrderBtnContainer[i], completeOrderBtnContainer[i])
+// RECEIPT FUNCTIONS
+document.getElementById("exitReceipt").onclick = function() {
+    document.getElementById("receipt-pop").style.display = "none";
+}
+document.getElementById("view-order").onclick = function() {
+    document.getElementById("receipt-pop").style.display = "flex";
+}
+document.getElementById("complete-order").onclick = function() {
+    document.querySelector(".receipt-order").style.display = "none";
+    document.getElementById("receipt-pop").style.display = "none";
+
+    document.getElementById("receipt-subtotal").innerHTML = 0;
+    document.getElementById("receipt-fee").innerHTML = 0;
+    document.getElementById("receipt-total").innerHTML = 0;
+    document.getElementById("to-pay").innerHTML = 0;
+}
+
+let receiptInterval;
+let receiptTimer = 100; 
+let phaseNum = 1;
+
+function receiptIntervalTime() {
     
-// }
+    receiptInterval = setInterval(() => {
+        
+        if (receiptTimer > 0) {
+            if (phaseNum == 1) {
+                document.getElementById("delivery-state").innerHTML = "Preparing food";
+                document.getElementById("receipt-show").style.backgroundImage = "url(/Assets/food-prep-gif.gif)";
+                receiptTimer--;
+            }
+            if (phaseNum == 2) {
+                document.getElementById("delivery-state").innerHTML = "Delivering order";
+                document.getElementById("receipt-show").style.backgroundImage = "url(/Assets/food-delivery-gif.gif)";
+                receiptTimer--;
+            }
+            if (phaseNum == 3) {
+                document.getElementById("delivery-state").innerHTML = "Food has arrived!";
+                document.getElementById("receipt-show").style.backgroundImage = "url(/Assets/food-arrived.jpg)";
+                receiptTimer--;
 
-function receiptFunction(orderNum, orderPopNum, receiptPopup, receiptOrder, exitReceiptIcon, viewOrder, completeOrder, subtotalcont, feecont, totalcont, toPayCont) {
 
-    let orderNumber = Math.floor(Math.random() * 10000) + 1000;
+                document.getElementById("complete-order").disabled = false;
+                document.getElementById("complete-order").style.backgroundColor = "#b6cf29";
 
-    orderNum.innerHTML = orderNumber;
-    orderPopNum.innerHTML = orderNumber;
+                orderBtn.disabled = false;
+                orderBtn.style.backgroundColor = "#b6cf29";
 
-    receiptPopup.style.display = "flex";
-    receiptOrder.style.display = "block";
+                for (let index = 0; index < addToCartBtn.length; index++) {
+                    
+                    addToCartBtn[index].disabled = false;
+                    addToCartBtn[index].style.backgroundColor = "#b6cf29";
+                }
+            }
+        }
+        else {
+            receiptTimer = 100;
+            phaseNum++;
+            clearInterval(receiptInterval);
+        }
 
-    exitReceiptPop(exitReceiptIcon, receiptPopup);
-    viewReceiptPop(viewOrder, receiptPopup);
-    completeReceiptPop(completeOrder, receiptOrder);
-
-    subtotalcont.innerHTML = receiptSubtotal;
-    feecont.innerHTML = receiptFee;
-    totalcont.innerHTML = receiptTotal;
-    toPayCont.innerHTML = receiptTotal;
-
+    }, 5000);
 }
 
-function exitReceiptPop(exitReceiptIcon, receiptPop) {
-    exitReceiptIcon.onclick = function() {
-        receiptPop.style.display = "none";
-    }
-}
+let orderNumberRandom = Math.floor(Math.random() * 10000) + 1000;
 
-function viewReceiptPop(viewOrderBtn, receiptPop) {
-    viewOrderBtn.onclick = function() {
-        receiptPop.style.display = "flex";
-    }
-}
-
-function completeReceiptPop(completeBtn, receiptOrder) {
-    completeBtn.onclick = function() {
-        receiptOrder.style.display = "none";
-    }
-}
-
-
-
-
-
-
+document.getElementById("orderPop-number").innerHTML = orderNumberRandom;
+document.getElementById("order-number").innerHTML = orderNumberRandom;
 
 
 // MOP FUNCTIONS 
@@ -263,12 +280,21 @@ cashBtn.onclick = function() {
             subtotalContainer.innerHTML = 0;
             feeContainer.innerHTML = 0;
             totalContainer.innerHTML = 0;
+
+            phaseNum = 1;
+            receiptIntervalTime();
+
+            document.querySelector(".receipt-order").style.display = "flex";
+            document.getElementById("receipt-pop").style.display = "flex";
+            document.getElementById("complete-order").disabled = true;
+            document.getElementById("complete-order").style.backgroundColor = "gray";
+
+            orderBtn.disabled = true;
+            orderBtn.style.backgroundColor = "gray";
+            addToCartBtn[index].disabled = true;
+            addToCartBtn[index].style.backgroundColor = "gray";
             
-            for (let i = 0; i < receiptOrderContainer.length; i++) {
-            receiptFunction(orderNumberContainer[i], orderPopNumberContainer[i], receiptpopContainer[i], receiptOrderContainer[i], exitReceiptIconContainer[i], viewOrderBtnContainer[i], completeOrderBtnContainer[i], receiptSubtotalContainer[i], receiptFeeContainer[i], receiptTotalContainer[i], toPayContainer[i])
-            }
         }
-        receiptCount++;
     }
 }
 cardBtn.onclick = function() {
@@ -285,16 +311,23 @@ cardBtn.onclick = function() {
         orderTime = 30;
         for (let index = 0; index < basketItemContainer.length; index++) {
             basketItemContainer[index].style.display = "none";
-            // receiptOrderContainer[receiptCount].style.display = "block";
-            
-            // document.getElementById("receipt-pop").style.display = "flex";
-    
             subtotalContainer.innerHTML = 0;
             feeContainer.innerHTML = 0;
             totalContainer.innerHTML = 0;
-            
+
+            phaseNum = 1;
+            receiptIntervalTime();
+
+            document.querySelector(".receipt-order").style.display = "flex";
+            document.getElementById("receipt-pop").style.display = "flex";
+            document.getElementById("complete-order").disabled = true;
+            document.getElementById("complete-order").style.backgroundColor = "gray";
+
+            orderBtn.disabled = true;
+            orderBtn.style.backgroundColor = "gray";
+            addToCartBtn[index].disabled = true;
+            addToCartBtn[index].style.backgroundColor = "gray";
         }
-        receiptCount++;
     }
 }
 ewalletBtn.onclick = function() {
@@ -311,15 +344,24 @@ ewalletBtn.onclick = function() {
         orderTime = 30;
         for (let index = 0; index < basketItemContainer.length; index++) {
             basketItemContainer[index].style.display = "none";
-            // receiptOrderContainer[receiptCount].style.display = "block";
-            
-            // document.getElementById("receipt-pop").style.display = "flex";
+
             subtotalContainer.innerHTML = 0;
             feeContainer.innerHTML = 0;
-            totalContainer.innerHTML = 0;
-            
+            totalContainer.innerHTML = 0; 
+
+            phaseNum = 1;
+            receiptIntervalTime();
+
+            document.querySelector(".receipt-order").style.display = "flex";
+            document.getElementById("receipt-pop").style.display = "flex";
+            document.getElementById("complete-order").disabled = true;
+            document.getElementById("complete-order").style.backgroundColor = "gray";
+
+            orderBtn.disabled = true;
+            orderBtn.style.backgroundColor = "gray";
+            addToCartBtn[index].disabled = true;
+            addToCartBtn[index].style.backgroundColor = "gray";
         }
-        receiptCount++;
     }
 }
 
