@@ -1090,7 +1090,7 @@ nav .dashboard-receipt {
 }
 
 .alert {
-        display: none;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
