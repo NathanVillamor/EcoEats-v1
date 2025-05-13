@@ -35,7 +35,8 @@
     
             <div class="header-category">
     
-                <input type="search" name="" id="" placeholder="Search for a dish">
+                <input type="search" name="" id="searchBar" placeholder="Search for a dish" autocomplete="off">
+
     
                 <div class="category-container">
     
@@ -4216,12 +4217,76 @@
             </div>
 
             <div class="receipt-body">
-                
+
+                <div class="receipt-order">
+
+                    <div class="progressbar"><i class="fa-solid fa-motorcycle"></i></div>
+
+                    <h3> Order #: <span id="order-number"></span></h2>
+                    <small> Delivery: On the way </small> <br>
+
+                    <button id="view-order"> View </button>
+                    <button id="complete-order"> Complete </button>
+                </div>
+                <div class="receipt-order">
+
+                    <div class="progressbar"><i class="fa-solid fa-motorcycle"></i></div>
+
+                    <h3> Order #: <span id="order-number"></span></h2>
+                    <small> Delivery: On the way </small> <br>
+
+                    <button id="view-order"> View </button>
+                    <button id="complete-order"> Complete </button>
+                </div>
+                <div class="receipt-order">
+
+                    <div class="progressbar"><i class="fa-solid fa-motorcycle"></i></div>
+
+                    <h3> Order #: <span id="order-number"></span></h2>
+                    <small> Delivery: On the way </small> <br>
+
+                    <button id="view-order"> View </button>
+                    <button id="complete-order"> Complete </button>
+                </div>
+                <div class="receipt-order">
+
+                    <div class="progressbar"><i class="fa-solid fa-motorcycle"></i></div>
+
+                    <h3> Order #: <span id="order-number"></span></h2>
+                    <small> Delivery: On the way </small> <br>
+
+                    <button id="view-order"> View </button>
+                    <button id="complete-order"> Complete </button>
+                </div>
+
             </div>
 
-         </section>
+            
+        </section>
+        
+        <div class="receipt-pop" id="receipt-pop">
 
+            <div class="receipt-pop-header">
+                <h4> Order #: <span id="order-number"></span></h4>
+                <img src="/Assets/xmark-solid.svg" alt="" id="exitReceipt">
+            </div>
 
+            <div class="receipt-pop-body">
+
+                <img src="/Assets/Order Fulfillment.png" alt="">
+
+            </div>
+
+            <div class="receipt-pop-footer">
+
+                <h5> Subtotal: ₱<span id="receipt-subtotal"></span></h5>
+                <h5> Fee: ₱<span id="receipt-fee"></span></h5>
+                <h4> Total: ₱ <span id="receipt-total"></span></h4>
+
+            </div>
+
+        </div>
+        
 
 
 
@@ -4246,6 +4311,14 @@
           <div class="pop" id="payment-ewallet">
              <i class="fa-solid fa-circle-check"></i>
              <h3> Payment with E-wallet is Successful </h3>
+          </div>
+          <div class="alert" id="no-mop">
+             <i class="fa-solid fa-circle-exclamation"></i>
+             <h3> Payment with E-wallet is Successful </h3>
+          </div>
+          <div class="alert" id="no-items">
+             <i class="fa-solid fa-circle-exclamation"></i>
+             <h3> Please select items  </h3>
           </div>
 
 

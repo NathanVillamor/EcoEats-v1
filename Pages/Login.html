@@ -50,7 +50,7 @@
     
     <div class="login-form">
         
-        <form action="">
+        <div class="form">
             <div class="form-header">
                 <h1> Login </h1>
                 <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, nam. </p>
@@ -64,7 +64,7 @@
             </div>
     
             <button id="loginBtn"> Login  </button>
-        </form>
+        </div>
 
         <div class="social-media">
             <small> Or Login with </small>
@@ -81,7 +81,7 @@
 
     <div class="signup-form">
         
-        <form action="">
+        <div class="form">
             <div class="form-header">
                 <h1> Signup </h1>
                 <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, nam. </p>
@@ -91,14 +91,9 @@
             <input type="password" name="" id="signup-password" placeholder="Password" required minlength="8">
             <input type="password" name="" id="signup-confirm" placeholder="Confirm Password" required minlength="8">
 
-            <div class="terms-conditions">
-                <input type="checkbox" name="" id="terms-conditions" required>
-                <small> I agree to the <a href="#"> terms & conditions </a> of EcoEats </small>
-            </div>
-
             <button id="signupBtn"> Create account  </button>
 
-        </form>
+        </div>
 
             <div class="social-media">
                 <small> Or Signup with </small>
@@ -116,8 +111,22 @@
 
     </main>
     
-    <div class="alert" id="">
+    <div class="alert" id="no-match">
         <i class="fa-solid fa-circle-exclamation"></i>
+        <h4> Passwords do not match </h4>
     </div>
+    <div class="alert" id="bad-email">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <h4> Invalid email </h4>
+    </div>
+    <div class="alert" id="wrong-info">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <h4> Wrong email or password </h4>
+    </div>
+    <div class="message" id="account-created">
+        <i class="fa-solid fa-circle-check"></i>
+        <h4> Account created </h4>
+    </div>
+    
 
 </html>
